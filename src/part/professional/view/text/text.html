@@ -1,0 +1,112 @@
+<style>
+    #tree.ztree li a{height:auto}
+    #tree.ztree li span.button.chk{margin:2px 3px 0 0;padding: 0;}
+    #tree.ztree li a span.button{margin:0 6px;width:17px;height:23px}
+    #tree.ztree li span{color:#666;vertical-align:top;font-size:15px;line-height:20px}
+    #tree.ztree li a:hover{background:#f0f0f0;text-decoration:none}
+    #tree.ztree li span.button.center_docu{background-position:-57px -15px;vertical-align:middle}
+    #tree.ztree li span.button.switch{height:23px;margin-top: -7px; margin-right: 5px;}
+    #tree.ztree li span.button.bottom_docu{background-position:-57px -33px}
+    #tree.ztree li a.curSelectedNode{ height:auto; padding: 3px 0;background-color:#dedede!important}
+    #tree.ztree li a:hover.curSelectedNode{ background-color: #FFE6B0; }
+    #tree.ztree li ul.line{background-position:0px 0}
+    #tree.ztree li a .edit-icon{visibility:hidden;line-height: 21px;vertical-align: top; }
+    #tree.ztree li span.node_name{display:inline-block;margin:0 15px 0 0; width: 250px; word-wrap:break-word;word-break:break-all; }
+    #tree.ztree li a:hover .edit-icon{visibility:inherit}
+    #tree.ztree li a .edit-icon i{padding:0 3px;color:#999;font:normal normal normal 14px/1 FontAwesome!important;line-height:16px}
+    #tree.ztree li a .edit-icon i:hover{color:#666}
+    #tree.ztree li { height: auto; word-wrap:break-word;word-break:break-all; white-space:pre-wrap; position: relative; }
+    #tree.ztree li::before { content: ''; left: -1px; display: block; position: absolute; width: 10px; top: 23px; bottom: 0px;background: url(static/libs/ztree/zTreeStyle/img/line_conn.gif) 0 0 repeat-y; }
+    #tree.ztree li:last-child::before { display: none;}
+
+
+    .custom-folder-user_ico_close,.custom-folder-user_ico_docu,.custom-folder-user_ico_open{background-image:url(static/icon/file-icons.png)!important;background-position:0 3px!important}
+    .custom-folder-company_ico_close,.custom-folder-company_ico_docu,.custom-folder-company_ico_open{background-image:url(static/icon/file-icons.png)!important;background-position:-30px 3px!important}
+    .custom-folder-delete_ico_close,.custom-folder-delete_ico_docu,.custom-folder-delete_ico_open{background-image:url(static/icon/file-icons.png)!important;background-position:-60px 3px!important}
+    .custom-folder-collect_ico_close,.custom-folder-collect_ico_docu,.custom-folder-collect_ico_open{background-image:url(static/icon/file-icons.png)!important;background-position:-90px 3px!important}
+    .custom-icon-image_ico_docu{background-image:url(static/icon/file-icons.png)!important;background-position:0 -27px!important}
+    .custom-icon-psd_ico_docu{background-image:url(static/icon/file-icons.png)!important;background-position:-30px -27px!important}
+    .custom-icon-doc_ico_docu{background-image:url(static/icon/file-icons.png)!important;background-position:-60px -27px!important}
+    .custom-icon-cad_ico_docu{background-image:url(static/icon/file-icons.png)!important;background-position:-90px -27px!important}
+    .custom-icon-text_ico_docu{background-image:url(static/icon/file-icons.png)!important;background-position:-120px -27px!important}
+    .custom-icon-html_ico_docu{background-image:url(static/icon/file-icons.png)!important;background-position:-150px -27px!important}
+    .custom-icon-mirror_ico_docu{background-image:url(static/icon/file-icons.png)!important;background-position:0 -57px!important}
+    .custom-icon-video_ico_docu{background-image:url(static/icon/file-icons.png)!important;background-position:-30px -57px!important}
+    .custom-icon-mp3_ico_docu{background-image:url(static/icon/file-icons.png)!important;background-position:-60px -57px!important}
+    .custom-icon-zip_ico_docu{background-image:url(static/icon/file-icons.png)!important;background-position:-90px -57px!important}
+    .custom-icon-xsl_ico_docu{background-image:url(static/icon/file-icons.png)!important;background-position:-120px -57px!important}
+    .custom-icon-ppt_ico_docu{background-image:url(static/icon/file-icons.png)!important;background-position:-150px -57px!important}
+    .custom-icon-pdf_ico_docu{background-image:url(static/icon/file-icons.png)!important;background-position:-180px -57px!important}
+    .custom-icon-config_ico_docu{background-image:url(static/icon/file-icons.png)!important;background-position:0 -87px!important}
+    .custom-icon-file_ico_docu{background-image:url(static/icon/file-icons.png)!important;background-position:-30px -87px!important}
+    .custom-icon-files_ico_docu{background-image:url(static/icon/file-icons.png)!important;background-position:-60px -87px!important}
+    #fileList { position: absolute; width: 100%; height: 100%; background: #f0f0f0;}
+    #fileList .leftPart { position: absolute; overflow-x: auto; overflow-y: auto; left: 0; top: 0; width: 500px; height: 100%; background: #fff;}
+    #fileList .rightPart { position: absolute; right: 0; top: 0; left: 510px; height: 100%; overflow-y: scroll; background: #fff;}
+    #tree { position: absolute; top: 75px; padding-left: 20px; left: 0; right: 0; bottom: 0; overflow: auto;}
+    .rootFolder i {display: inline-block; width: 18px; height: 18px; margin: 0 3px ;}
+    #viewBox { position: absolute;  top: 20px; left: 20px; bottom: 20px; right: 20px; overflow: auto; }
+    #viewBox .viewImage { display: flex; align-items: center; width: 100%; height: 100%;}
+    #viewBox .viewImage img {  max-width: 100%; max-height: 100%;  margin: 0 auto; align-items: center;}
+    #viewBox pre { font-family: Verdana, Arial, Helvetica, AppleGothic, sans-serif;}
+    #fileList .buttons { text-align: right; padding: 10px;}
+    #fileList #tree.ztree li a.curSelectedNode { background-color:#dedede }
+    #viewBox .iframeView { border: none; padding: 0; margin: 0;height: 100%; width: 100%;}
+    .gpyviewbox{display: block;
+    position: fixed;
+    _position: absolute;
+    top: 0px;
+    bottom: 0;
+    right: -8px!important;
+    left: 520px;
+    overflow: auto;
+   
+    }
+    #fileList .gpyviewbox .buttons{ text-align: left}
+    .closeBox{
+        position: absolute;
+        right: 5px;
+        top: -3px;
+        width: 20px;
+        height: 20px;
+        z-index: 9999999;
+    }
+</style>
+
+<div id="fileList">
+    <div class="leftPart">
+        <div class="buttons">
+
+            <div class="layui-btn layui-btn-sm layui-btn-ys" id="reload">
+                <i class="buttonIcon down"></i> 重置模板
+            </div>
+
+            <div class="layui-btn layui-btn-sm layui-btn-ys" id="download">
+                <i class="buttonIcon deal"></i> 打包下载
+            </div>
+
+            <div class="layui-btn layui-btn-sm layui-btn-ys" id="deleteFile">
+                <i class="buttonIcon delete"></i> 删除附件
+            </div>
+            <!-- <button style="display: none;" class="layui-btn layui-btn-ys layui-btn-sm" id="reload"><i><img class="cloud-icon cloud-icon-refresh"></i>重置模板</button>
+            <button class="layui-btn layui-btn-ys layui-btn-sm" id="download"><i><img class="cloud-icon cloud-icon-table-download"></i>打包下载</button>
+            <button style="display: none;" class="layui-btn layui-btn-ys layui-btn-sm" id="deleteFile"><i><img class="cloud-icon cloud-icon-del"></i>删除附件</button> -->
+        </div>
+        <div class="rootFolder">
+            <i class="folderIcon custom-folder-user_ico_close"></i>
+            <span id="folwName">附件流程名称</span>
+            <i title="添加文件夹" style="display: none;" id="addRootFolder" class="fa fa-plus" aria-hidden="true"></i>
+        </div>
+        <div id="tree" class="ztree"> </div>
+    </div>
+    <div class="rightPart">
+        <div id="viewBox"></div>
+        <div class="gpyviewbox">
+            <div class="closeBox">
+                <i class="layui-icon layui-icon-close-fill" style="font-size: 25px;"></i>   
+            </div>
+            
+        </div>
+    </div>
+    
+</div>

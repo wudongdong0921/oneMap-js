@@ -1,0 +1,130 @@
+<style type="text/css">
+        *{margin:0; padding:0; list-style:none; font-size:16px;}
+        .div .ys-tab{  width:90%; margin:0 auto; border-left:1px solid #ccc; border-top:1px solid #ccc; text-align:center;  }
+        .div .ys-tab tr td{ line-height:15px; height:38px; border-right:1px solid #ccc;}
+        .div .border-top-none{border-top:none!important;}
+        .div .fl{float:left;}
+        .div .fr{float:right;}
+        .div .ys-tab .tr{ width:100%; float:left; height:38px; margin-top: 10px;}
+        .div .ys-tab .tr>div:nth-child(1){font-weight: bold;}
+        .div .ys-tab .tr>div{float:left; line-height:38px; height:38px;   }
+        .div .ys-section-table td{ width:110px;border-right:1px solid #ccc;  border-bottom:1px solid #ccc;}
+        .div .gz-tab td{border-right:1px solid #ccc;  border-bottom:1px solid #ccc;}
+        .div .tit{width:95.8%; font-size:16px;  text-align:left; padding-left:4%; font-weight:bold; }
+        /* height */
+        .div .h300{height:300px!important; }
+        .div .layui-form.layui-border-box.layui-table-view{margin:1px!important;}
+        .div .layui-table-col-special{width:50px!important;}
+        /* border */
+        .div .border-bottom-none td{border-bottom:none!important;}
+        .div .border-top-none{border-top:none!important;}
+        .div .bgnone{background:none!important;}
+        .div .cor-red{color:red;}
+        /* .div .bor_bottom{
+            border-bottom:1px solid #ccc;
+        } */
+        .div .dkclass{
+            background: #1e9fff;color: white;padding: 3px;font-size: 9px;
+        }
+        .div .layui-none{
+            display:none!important;
+        }
+        .div .right{float: right; margin: 5px; font-weight: normal;}
+        .div .tr-left{width: 20%;}
+        .div .tr-center{width: 75.8%;float:right; margin-right: -10px;}
+
+        .div .tr-down-right{width: 76%; float: right;}
+    </style>
+
+
+<div class="div">
+    <div class="ys-tab" style="border-top:none;  margin:0 auto 3px; ">
+        <div class="tr">
+            <div class="tit border-top-none tr-left">地块列表</div>
+            <div class="tr-center" id="dklb">
+                <div class="tit border-top-none bgnone" class="demoTable" id="demoTable">
+                    <button class="layui-btn layui-btn-sm layui-btn-ys right" style="display: none;" id="YDBJGJBZZBXGSMB" type="button">
+                        <i class="larry-icon larry-jia"><img class="cloud-icon cloud-icon-down"></i>
+                        用地报件国家标准坐标格式模板
+                    </button>
+                    <button class="layui-btn layui-btn-sm layui-btn-ys ml5 right" id="1" type="button" style="display: none;">
+                        <i class="larry-icon larry-dingdanliebiao"><img class="cloud-icon cloud-icon-reset"></i>
+                        导出excel
+                    </button>
+                    <button class="layui-btn layui-btn-sm layui-btn-ys right" id="0" data-type="dkDeleteAll" type="button" style="display: none;">
+                        <i class="larry-icon larry-zuixiaohua"><img class="cloud-icon cloud-icon-reset"></i>
+                        导出txt
+                    </button>
+                    <button class="layui-btn layui-btn-sm layui-btn-ys ml5 right" style="display: none;" id="dkImport" type="button">
+                        <i class="larry-icon larry-dingdanliebiao"><img class="cloud-icon cloud-icon-upload-file"></i>
+                        导入
+                    </button>
+                    <button class="layui-btn layui-btn-sm layui-btn-ys right" style="display: none;" id="dkDeleteAll" data-type="dkDeleteAll" type="button">
+                        <i class="larry-icon larry-zuixiaohua"><img class="cloud-icon cloud-icon-del"></i>
+                        删除全部
+                    </button>
+                    <button class="layui-btn layui-btn-sm layui-btn-ys ml5 right" style="display: none;" id="dkDelete" data-type="dkDelete" type="button">
+                        <i class="larry-icon larry-shanchu"><img class="cloud-icon cloud-icon-del"></i>
+                        删除
+                    </button>
+                    <button class="layui-btn layui-btn-sm layui-btn-ys ml5 right" style="display: none;" id="dkEidt" data-type="dkEidt" type="button">
+                        <i class="larry-icon larry-xiugaimima1"><img class="cloud-icon cloud-icon-table-edit"></i>
+                        编辑
+                    </button>
+                    <button class="layui-btn layui-btn-sm layui-btn-ys right" style="display: none;" id="dkAdd" data-type="dkAdd" type="button">
+                        <i class="larry-icon larry-jia"><img class="cloud-icon cloud-icon-add"></i>
+                        新增
+                    </button>
+                    <!-- <button class="layui-btn layui-btn-sm layui-btn-ys right" style="display: none;" id="chxx" data-type="chxx" type="button">
+                        <i class="larry-icon larry-jia"><img class="cloud-icon cloud-icon-table-edit"></i>
+                        测绘信息
+                    </button> -->
+                    <input type="text" style="display: none" id="dkData">
+                </div>
+            </div>
+        </div>
+        <div class="tr h300">
+            <div class="h300" style="width:99.8%; background:none;font-weight: normal">
+                <table class="layui-hide" id="dk" lay-filter="dk"></table>
+            </div>
+        </div>
+        <div class="tr">
+            <div class="tit border-top-none background tr-left">界址点成果表</div>
+            <div class="tr-right"></div>
+            <div class="tr-down-right" id="jzdcgb">
+                <div class="tit border-top-none bgnone">
+                    <button class="layui-btn layui-btn-sm layui-btn-ys right" style="display: none;" id="jzdDeleteAll" data-type="jzdDeleteAll" type="button">
+                        <i class="larry-icon larry-zuixiaohua"><img class="cloud-icon cloud-icon-del"></i>
+                        删除全部
+                    </button>
+                    <button class="layui-btn layui-btn-sm layui-btn-ys right ml5" style="display: none;" id="jzdDelete" data-type="jzdDelete" type="button">
+                        <i class="larry-icon larry-shanchu"><img class="cloud-icon cloud-icon-del"></i>
+                        删除
+                    </button>
+                    <button class="layui-btn layui-btn-sm layui-btn-ys right ml5" style="display: none;" id="jzdEidt" data-type="jzdEidt" type="button">
+                        <i class="larry-icon larry-xiugaimima1"><img class="cloud-icon cloud-icon-table-edit"></i>
+                        编辑
+                    </button>
+                    <button class="layui-btn layui-btn-sm layui-btn-ys right" style="display: none;" id="jzdAdd" data-type="jzdAdd" type="button">
+                        <i class="larry-icon larry-jia"><img class="cloud-icon cloud-icon-add"></i>
+                        新增
+                    </button>
+                    <input type="text" style="display: none" id="jzdData">
+                </div>
+            </div>
+        </div>
+        <div class="tr bor_bottom">
+            <div style="width:99.8%; background:none;font-weight: normal;border-right: none">
+                <table class="layui-hide" id="jzd" lay-filter="jzd"></table>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    function exportExcelOrTxt() {
+        document.getElementById('ExcelOrTxt').style.display = 'block';
+        document.getElementById('ExcelOrTxt').style.display = 'inline';
+    }
+
+</script>

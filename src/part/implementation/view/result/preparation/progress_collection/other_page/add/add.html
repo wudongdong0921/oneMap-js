@@ -1,0 +1,40 @@
+<style>
+    .form_row {
+        width: 564px;
+        text-align: center;
+        margin-top: 20px;
+        margin-left: 76px;
+    }
+
+    .tree_row {
+        display: flex;
+        padding-left: 137px;
+        color: #666666;
+    }
+
+    .tree_container {
+        height: 262px;
+        overflow: auto;
+        border: 1px solid #cacaca;
+        margin-left: 15px;
+    }
+
+    .button_style {
+        margin-top: 20px;
+        margin-left: 300px;
+    }
+</style>
+<div class="form_row"> </div>
+<div class="tree_row">
+    <div>采集范围</div>
+    <div style="width: 439px;">
+        <div class="tree_container">
+            <ul id="tree" class="ztree"></ul>
+        </div>
+    </div>
+</div>
+<div class="button_style">
+    <div id="cancel" class="layui-btn layui-btn-ys" style="margin: 0px 0;">返回</div>
+    <div id="confirm" class="layui-btn layui-btn-ys" style="margin-left: 70px;background-color: #5294d7;color: white;">
+        确认</div>
+</div>

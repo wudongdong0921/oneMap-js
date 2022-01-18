@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+        <style type="text/css">
+        #card { background-color: #F2F2F2; padding: 0px 10px 20px; height: 100%; margin: -10px;}
+        #card .card-height{height: 400px;}
+        #card .card-in-height{height: 325px;}
+        #card .card-calendar{height: 368px; }
+        #card .card-title{ display: inline-block; float: left; padding: 0 10px; height: 100%; border-bottom: 5px solid #1958A6; color: #1958A6;}
+        #card .card-a-title{ display: inline-block; float: left; padding: 0 10px; height: 100%; border-bottom: 5px solid #1958A6; color: #1958A6;}
+
+        .table { background: #444400;}
+
+        #card .form_calendar {position: absolute; top: 5px; left: 5px; right: 5px; bottom: 5px; overflow: hidden;}
+        #card .form_calendar .form_calendar_conteoller {position: absolute; top: 0px; left: 0px; height: 24px; line-height: 24px; right: 0px;}
+        #card .form_calendar .form_calendar_select { position: absolute; top: 0px; left: 0px; width: 92px; height: 22px; line-height: 22px; font-size: 16px; color: #666; cursor: pointer; border: 1px solid #fff; }
+        #card .form_calendar .form_calendar_selectName { position: absolute; left: 3px; }
+        #card .form_calendar .form_calendar_selectIcon { position: absolute; top: 0px; right: 0px; width: 22px; height: 22px;}
+        #card .form_calendar .form_calendar_buttons { height: 24px; width: 75px; position: absolute; top: 0px; right: 0px; }
+        #card .form_calendar .form_calendar_button { width: 22px; color: #999; height: 22px; position: absolute; top: 0px; border: 1px solid #ccc; cursor: pointer; text-align: center; font-size: 20px; text-align: center; }
+        #card .form_calendar .form_calendar_today { left: 25px;font-size: 1px; line-height: 20px;}
+        #card .form_calendar .form_calendar_pre { left: 0px; }
+        #card .form_calendar .form_calendar_next { left: 50px; }
+        #card .form_calendar .form_calendar_yearlist,#card .form_calendar .form_calendar_dayslist { top: 30px; position: absolute; left: 0px; right: 0px;bottom :0px; display: block; } 
+        #card .form_calendar .form_calendar_daysTitle {height: 26px; font-size: 16px; line-height: 26px; color: #fff; border-bottom: 1px solid #ccc; background: #1958A6;}
+        #card .form_calendar .form_calendar_weeks { width: 14%; float: left; text-align: center; }
+        #card .form_calendar .form_calendar_daysBody { height:250px; background: #fff; }
+        #card .form_calendar .form_calendar_day { height: 40px; width: 14%; float: left; color: #1958A6; font-size: 16px; text-align: center; border-radius: 3px; cursor: pointer; } 
+        #card .form_calendar .form_calender_day_content {height:20px;width: 20px; width: 40px; line-height: 20px;margin: auto;margin-top: 7px;}
+        #card .form_calendar .form_calender_day_content.today {color: #fff;background: #1958A6; border: 1px solid #ccc;}
+        #card .form_calendar .form_calender_day_content.active {background:#1e90ff; color: #fff;}
+        #card .form_calendar .form_calender_day_content.empty {border-color: #fff; color: #fff; cursor:initial}
+        #card .form_calendar .form_calender_day_content.unactive {color: #aaa!important; cursor: inherit}
+        #card .form_calendar .form_calendar_yearlist { display: none; overflow-y: auto; }
+        #card .form_calendar .form_calendar_yearItem { height: 22px; border: 1px solid #ccc; border-width: 1px 0; margin: -1px 0; background: #eaeaea; color: #666; font-size: 1px; padding-left: 10px; line-height: 22px; cursor: pointer; }
+        #card .form_calendar .form_calendar_monthItem { height: 30px; line-height: 30px; font-size: 16px; text-align: center; width: 25%; float: left; color: #666; width: 54px; border: 1px solid #ccc; border-width: 1px 1px 0 1px; margin: 0 0 -1px -1px; cursor: pointer; }
+
+    </style>
+    </head>
+
+    <body>
+        <div id="card">
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-md8 card-height">
+                    <div class="layui-card" style="text-align: center">
+                        <div class="layui-card-header">
+                            <div class="card-title">在办业务<span id="toDoListSum"></span></div>
+                        </div>
+                        <div class="layui-card-body card-in-height" id="toDoList">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md4 card-height">
+                    <div class="layui-card" style="text-align: center">
+                        <div class="layui-card-header">
+                            <div class="card-a-title">业务统计</div>
+                        </div>
+                        <div class="layui-card-body card-in-height">
+                            <div class="flex-chunk" id="chart_main1" style="height: 100%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md8 card-height">
+                    <div class="layui-card" style="text-align: center">
+                        <div class="layui-card-header">
+                            <div class="card-title">已办业务<span id="doneListSum"></span></div>
+                        </div>
+                        <div class="layui-card-body card-in-height" id="doneList">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md4 card-height">
+                    <div class="layui-card" style="text-align: center">
+                        <div class="layui-card-body card-calendar">
+                            <div class="layui-inline" id="test-n1" style="height: 100%; width: 100%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

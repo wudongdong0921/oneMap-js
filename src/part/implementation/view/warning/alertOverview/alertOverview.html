@@ -1,0 +1,166 @@
+<!----------------------------------------
+* 预警总览
+* 戴飞
+* 2020-11-23 13:10:30
+------------------------------------------->
+<style>
+  .layout-template-view {
+    padding: 0;
+  }
+
+  #card {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #f2f2f2;
+    height: 100%;
+  }
+
+  #card .war-top {
+    width: 100%;
+    height: 60px;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+  }
+
+  #card .war-top .area {
+    padding: 15px;
+  }
+
+  #card .war-top .area .area-list {
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  #card .war-top .search {
+    line-height: 60px;
+    padding-right: 50px;
+  }
+
+  #card .war-top .search .layui-input {
+    width: 200px;
+    display: inline;
+    margin-right: 20px;
+  }
+
+  #card .war-left {
+    width: 35%;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+
+  #card .war-left .war-left-top .layui-card-header {
+    border-bottom: none;
+  }
+
+  #card .war-left .war-left-top .layui-card-body {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  #card .war-left .war-left-top .layui-card-body .piece {
+    width: 100px;
+    height: 85px;
+    box-shadow: 1px 1px 5px 1px rgba(25, 25, 25, .3);
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 25px;
+  }
+
+  #card .war-left .war-left-right {
+    width: 39.5%;
+  }
+
+  #card .war-left .war-left-right .layui-card-header {
+    border-bottom: none;
+  }
+
+  #card .war-left .war-left-top .layui-card {
+    height: 190px;
+  }
+
+  #card .war-left .war-left-right .layui-card {
+    height: 190px;
+  }
+
+  #card .war-left .war-left-right .layui-card .layui-card-body {
+    height: 110px;
+    overflow: auto;
+  }
+
+  #card .war-left .war-left-right .body-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    height: 40px;
+  }
+
+  #card .war-left .war-left-right .body-row .look-index {
+    cursor: pointer;
+  }
+
+  #card .war-left .war-left-bottom {
+    margin-top: 10px;
+  }
+
+  #card .war-left .war-left-bottom .war-left-pie {
+    height: 565px;
+    padding-top: 10px;
+  }
+
+  #card .war-right {
+    width: 65%;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+
+  #card .war-right .war-right-top {
+    height: 350px;
+  }
+
+  #card .war-right .war-right-bottom {
+    height: 415px;
+  }
+
+  .layui-card {
+    margin-bottom: 10px;
+  }
+</style>
+<div id="card">
+  <div class="war-top">
+    <div class="area">
+      <img src="../../../../../../public/static/icon//area.svg" width="20px" alt="">
+      <div class="area-list"></div>
+    </div>
+    <div class="search">
+      <button type="button" class="layui-btn" id="scyjbg"
+        style="margin-top: -4px;background: #eff1f2;color: #252525;">生成预警报告</button>
+    </div>
+  </div>
+  <div style="display: flex;">
+    <div class="war-left">
+      <div class="war-left-top">
+
+      </div>
+      <div class="war-left-bottom">
+        <div class="layui-card">
+          <div class="war-left-pie"></div>
+        </div>
+      </div>
+    </div>
+    <div class="war-right">
+      <div class="layui-card">
+        <div class="war-right-top">
+
+        </div>
+      </div>
+      <div class="layui-card">
+        <div class="war-right-bottom">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

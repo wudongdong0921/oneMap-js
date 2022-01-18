@@ -1,0 +1,10 @@
+.business_map_box{margin-bottom: 20px;cursor: pointer;}
+.business_map_box .business_map_wrapper{padding-bottom: 50px;}
+.business_map_box.active{background: #b7d6e5;}
+.business_map_box .business_map_left,.business_map_box .business_map_right{vertical-align: middle;padding: 12px 6px;min-width: 0;box-sizing: border-box;text-overflow: ellipsis;}
+.business_map_box .business_map_left{width: 40%;border-bottom: 1px solid #ebeef5;border-right: 1px solid #ebeef5;}
+.business_map_box .business_map_right{width: 60%;border-bottom: 1px solid #ebeef5;border-right: 1px solid #ebeef5;}
+.business_map_box .business_body{border: 1px solid #ebeef5;}
+.business_button .wdd-btn-primary {color: #fff;background-color: #188ae2;border-color: #188ae2;}
+.business_button{position: absolute;bottom: 0px;width: 100%;text-align: center;padding-top: 15px;background: #fff;}
+

@@ -1,0 +1,71 @@
+<!-- 分屏对比 戴飞 -->
+<style>
+  #split {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+  }
+  #split #left{
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+  }
+  .split-tree{
+    width: 60%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    background: #fff;
+    box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, .5) !important;
+    transform: translateX(-100%);
+    transition: 0.6s;
+  }
+  .layui-icon-template-1{
+    position: absolute;
+    top: 2%;
+    left: 4%;
+    z-index: 9;
+    color: cornflowerblue;
+    width: 40px;
+    text-align: center;
+    font-size: 26px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 3px;
+    box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, .5) !important;
+    cursor: pointer;
+    transition: 0.6s;
+  }
+  #split #right{
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+  }
+  #file-view-left{
+    width: 100%;
+    height: 100%;
+  }
+  #file-view-right{
+    width: 100%;
+    height: 100%;
+  }
+</style>
+
+
+<div id="split">
+  <div id="left">
+    <div class="split-tree" id="split-tree-left"></div>
+    <div id="view-left"></div>
+    <div id="file-view-left"></div>
+    <i class="layui-icon layui-icon-template-1" id="left-switch"></i>
+  </div>
+  <div id="right">
+    <div class="split-tree" id="split-tree-right"></div>
+    <div id="view-right"></div>
+    <div id="file-view-right"></div>
+    <i class="layui-icon layui-icon-template-1" id="right-switch"></i>
+  </div>
+</div>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>土地分类面积</title>
+        <style type="text/css">
+        .landClassifiedArea *{margin:0; padding:0; list-style:none; font-size:16px;}
+        .landClassifiedArea.div .ys-tab{width:98%;margin:0 auto; border-left:1px solid #ccc; border-top:1px solid #ccc; text-align:center;  }
+        .landClassifiedArea.div .ys-tab tr td{width:98%; line-height:15px; height:30px; border-right:1px solid #ccc; border-bottom:1px solid #ccc;margin: 0 auto }
+        .landClassifiedArea.div .border-top-none{border-top:none!important;}
+        .landClassifiedArea.div .fl{float:left;}
+        .landClassifiedArea.div .ys-tab .tr{ width:98%;; float:left; height:48px;  margin:0 auto;}
+        .landClassifiedArea.div .ys-tab .tr>div:nth-child(1){font-weight: bold;}
+        .landClassifiedArea.div .ys-tab .tr>div{float:left; line-height:38px; height:38px;  }
+        .landClassifiedArea.div .ys-section-table td{ width:110px;border-right:1px solid #ccc;  border-bottom:1px solid #ccc;}
+        .landClassifiedArea.div .gz-tab td{border-right:1px solid #ccc;  border-bottom:1px solid #ccc;}
+        .landClassifiedArea.div .tit{width:97.2%; font-size:16px;  text-align:left;  padding-left:4%; font-weight:bold; }
+        /* height */
+       .landClassifiedArea.div .layui-form.layui-border-box.layui-table-view{margin:1px!important;}
+       .landClassifiedArea.div .layui-table-col-special{width:50px!important;}
+        /* border */
+        .landClassifiedArea.div .border-bottom-none td{border-bottom:none!important;}
+        .landClassifiedArea.div .border-top-none{border-top:none!important;}
+        .landClassifiedArea.div .bgnone{background:none!important;}
+        .landClassifiedArea.div .right{float: right; margin: 5px; font-weight: normal;}
+        .landClassifiedArea.div .layui-none{
+            display:none!important;
+        }
+        .landClassifiedArea.div .layui-btn-ys i{margin-top: 5px;}
+        .landClassifiedArea.div .layui-btn-ys:hover img {margin-top: -42px;}
+    </style>
+    </head>
+
+    <body>
+        <div class="div landClassifiedArea">
+            <!-- <table class="ys-tab" cellpadding="0" cellspacing="0" style="border: none">
+        <tr style="border: none">
+            <td colspan="5" style="text-align:left; font-weight:bold;border: none">
+                <span class="fl">点击此处下载：<a href="javascript:void(0)" id="downloadTDFELJMB">土地分类面积模板</a></span>
+            </td>
+        </tr>
+    </table> -->
+            <div class="ys-tab" style="border-top:none; margin:0 auto; width: 98%">
+                <div class="tr">
+                    <div class="tit border-top-none">土地分类面积表
+                        <button class="layui-btn layui-btn-sm layui-btn-ys ml5 right" id="exprotExcel" type="button" style="display: none;">
+                            <i class="larry-icon larry-dingdanliebiao"><img class="cloud-icon cloud-icon-reset"></i>
+                            导入
+                        </button>
+                        <button class="layui-btn layui-btn-sm layui-btn-ys right" id="delAreas" data-type="dkDeleteAll" type="button" style="display: none;">
+                            <i class="larry-icon larry-zuixiaohua"><img class="cloud-icon cloud-icon-del"></i>
+                            删除全部
+                        </button>
+                        <button class="layui-btn layui-btn-sm layui-btn-ys ml5 right" style="display: none;" id="downloadTDFELJMB" type="button">
+                            <i class="larry-icon larry-dingdanliebiao"><img class="cloud-icon cloud-icon-down"></i>
+                            土地分类面积模板
+                        </button>
+                        <!-- <span style="display: none;" class="layui-btn layui-btn-sm layui-btn-ys layui-btn-normal ml5 right" id="exprotExcel">
+                            <i class="larry-icon larry-dingdanliebiao"><img class="cloud-icon cloud-icon-reset"></i>
+                            导入
+                        </span>
+                        <span style="display: none;" class="layui-btn layui-btn-sm layui-btn-ys layui-btn-normal right" id="delAreas">
+                            <i class="larry-icon  larry-zuixiaohua"><img class="cloud-icon cloud-icon-del"></i>
+                            删除全部
+                        </span>
+                        <span style="display: none;" class="layui-btn layui-btn-sm layui-btn-ys layui-btn-normal right" id="downloadTDFELJMB">
+                            <i class="larry-icon  larry-zuixiaohua"><img class="cloud-icon cloud-icon-down"></i>
+                            土地分类面积模板
+                        </span> -->
+                    </div>
+                </div>
+                <!-- <div class="tr" >
+            <div class="tit border-top-none bgnone">
+                <span class="layui-btn layui-btn-sm layui-btn-normal" id="delAreas">
+                    <i class="larry-icon larry-zuixiaohua"></i>
+                    删除全部
+                </span>
+                <span class="layui-btn layui-btn-sm layui-btn-normal ml5" id="exprotExcel">
+                    <i class="larry-icon larry-dingdanliebiao"></i>
+                    导入
+                </span>
+
+            </div>
+        </div> -->
+                <div class="tr bor_bottom" style=" margin-bottom:10%;">
+                    <div style=" width:101%; background:none;font-weight: normal;">
+                        <input type="hidden" id="trValue" value="">
+                        <table id="tdflmjb" class="larry-hide" lay-filter="tdflmjb"></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

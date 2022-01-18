@@ -1,0 +1,767 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    font-family: "Microsoft YaHei", "微软雅黑", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+}
+
+#layout-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-width: 1000px;
+    min-height: 600px;
+}
+
+/* .layout-header { height: 70px; background: #1D4689; width: 100%; position: absolute; } */
+
+.layout-header {
+    height: 70px;
+    background: url(../../../public/static/img/nav-x.png);
+}
+
+.layout-header img {
+    display: block;
+}
+
+.layout-logo {
+    float: left;
+}
+
+.layout-userinfo {
+    float: right;
+    height: 70px;
+    color: #fff;
+    line-height: 70px;
+    margin: 0 10px;
+    user-select: none
+}
+
+.layout-userinfo span {
+    margin: 0 15px 0 0;
+}
+
+.layout-userinfo i {
+    cursor: pointer;
+}
+
+.layout-userinfo .forgetPassword:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 16px;
+    font-family: "Microsoft YaHei", "微软雅黑", "Helvetica Neue";
+}
+
+.layout-submenu {
+    position: absolute;
+    background: #fff;
+    top: 117px;
+    left: -200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 200px;
+    bottom: 0;
+    transition: all 0.2s;
+}
+
+.layout-mainMenu {
+    float: right;
+    position: absolute;
+    right: 112px;
+}
+
+.layout-tab {
+    user-select: none;
+    background: #fff;
+    position: absolute;
+    border-bottom: 1px solid #1E9FFF;
+    left: 0px;
+    top: 70px;
+    right: 0;
+    height: 36px;
+    transition: all 0.2s;
+}
+
+.layout-content {
+    position: absolute;
+    left: 0px;
+    top: 117px;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    transition: all 0.2s;
+}
+
+.layout-template-view {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    padding: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.layui-btn-blue {
+    background-color: #1958A6;
+    color: #fff
+}
+/* 公文查询按钮 */
+.layui-gwbtn-blue {
+    background-color: #3c8deb ;
+    color: #fff
+}
+
+#MainMenu {
+    user-select: none;
+}
+
+#MainMenu .menuItem {
+    height: 70px;
+    display: inline-block;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+#MainMenu .menuItem .menu-icon {
+    width: 30px;
+    height: 28px;
+    margin: 10px auto 5px auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+#MainMenu .menuItem .menu-name {
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+}
+
+#MainMenu .menuItem a {
+    display: block;
+}
+
+#MainMenu .menuItem:hover {
+    background: #305DA7;
+}
+
+.layout-tab-item {
+    display: inline-block;
+    transition: background-color 0.5s;
+    cursor: pointer;
+    height: 36px;
+    padding: 0 40px 0 20px;
+    position: relative;
+    margin: 0 0 0 -1px;
+    border-right: 1px solid #eee;
+    border-left: 1px solid #eee;
+}
+
+.layout-tab-item span {
+    line-height: 36px;
+    display: inline-block;
+    font-size: 16px;
+    color: #999;
+    height: 20px;
+    line-height: 20px;
+    margin: 8px 0 8px 0;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 122px;
+}
+
+.layout-tab-item i {
+    font-size: 12px;
+    color: #999;
+    transition: all 0.2s;
+    border-radius: 2px;
+    display: inline-block;
+    width: 15px;
+    height: 17px;
+    cursor: pointer;
+    position: absolute;
+    padding: 0 1px 0 0;
+    top: 11px;
+    right: 15px;
+    line-height: 17px;
+    text-align: center;
+}
+
+.layout-tab-item i:hover {
+    background: #FF5722;
+    color: #fff;
+}
+
+.layout-tab-item .bar {
+    position: absolute;
+    transition: right 0.5s;
+    height: 4px;
+    bottom: 0px;
+    left: 0;
+    right: 100%;
+    background: #818080;
+}
+
+.layout-tab-item:hover {
+    background: #F2F2F2;
+}
+
+.layout-tab-item:hover .bar {
+    right: 0%;
+}
+
+.layout-tab-item.active i {
+    color: #fff;
+}
+
+.layout-tab-item.active span {
+    color: #fff;
+}
+
+.layout-tab-item.active {
+    background: #1958A6;
+}
+
+.layout-tab-item.active .bar {
+    background: #1958A6;
+}
+
+.layout-tab-box {
+    left: 30px;
+    height: 37px;
+    right: 100px;
+    position: absolute;
+    overflow: hidden;
+}
+
+.layout-tab-before {
+    cursor: pointer;
+    width: 29px;
+    border-right: 1px solid #eee;
+    height: 36px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: center;
+    line-height: 35px;
+    color: #1958A6;
+}
+
+.layout-tab-after {
+    cursor: pointer;
+    width: 29px;
+    border-left: 1px solid #eee;
+    height: 36px;
+    position: absolute;
+    right: 70px;
+    top: 0;
+    text-align: center;
+    line-height: 35px;
+    color: #1958A6;
+}
+
+.layout-tab-before:hover, .layout-tab-after:hover {
+    background: #f9f9f9;
+}
+
+.layout-tab-refresh {
+    cursor: pointer;
+    width: 70px;
+    color: #fff;
+    background: #1958A6;
+    font-size: 16px;
+    text-align: center;
+    line-height: 37px;
+    height: 37px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.layout-tab-refresh span {
+    padding: 0 3px;
+    font-size: 16px;
+}
+
+.layout-tab-refresh:hover {
+    background: #3170BE;
+}
+
+#tabMenu {
+    user-select: none;
+    position: fixed;
+    padding: 4px 0 0 0;
+    top: -1000px;
+    left: -1000px;
+    width: 145px;
+    height: 200px;
+    z-index: 999;
+    background: #fff;
+    border: 1px solid #eee;
+}
+
+#tabMenu .tab-menu-item {
+    line-height: 38px;
+    cursor: pointer;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    color: #666;
+}
+
+#tabMenu .tab-menu-item:last-child {
+    border: none;
+}
+
+#tabMenu .tab-menu-item:hover {
+    background: #e0e0e0;
+    color: #305DA7;
+}
+
+#subMenu {
+    width: 200px;
+    user-select: none;
+}
+
+#subMenu .submenu-title {
+    line-height: 37px;
+    cursor: pointer;
+    position: relative;
+    width: 200px;
+    color: #999;
+    right: 0;
+    border-bottom: 1px solid #eee;
+}
+
+#subMenu .submenu-title:hover {
+    background: #f0f0f0;
+    color: #305DA7;
+}
+
+#subMenu .submenu-title.active {
+    color: #009688;
+}
+
+#subMenu .submenu-button {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 37px;
+    width: 37px;
+    text-align: center;
+    font-size: 16px;
+    color: #999;
+}
+
+#subMenu .submenu-button:hover i {
+    color: #666;
+}
+
+/* 第一层active */
+
+#subMenu .depth-1>.submenu-title {
+    height: 43px;
+    line-height: 43px;
+}
+
+#subMenu .depth-1>.submenu-title .submenu-button {
+    height: 43px;
+    width: 43px;
+}
+
+#subMenu .depth-1>.submenu-title.active {
+    background: #f8f8f8;
+    color: #305DA7;
+}
+
+#subMenu .depth-1>.submenu-title.active>.submenu-button i {
+    color: #999;
+}
+
+#subMenu .depth-1>.submenu-title.active::before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    background: #305DA7;
+    left: 0;
+    top: 0;
+}
+
+#subMenu .depth-2>.submenu-title {
+    height: 35px;
+    line-height: 35px;
+}
+
+#subMenu .depth-2>.submenu-title .submenu-button {
+    height: 35px;
+    width: 35px;
+}
+
+#subMenu .depth-2>.submenu-title.active {
+    background: #305DA7;
+    color: #fff;
+}
+
+#subMenu .depth-2>.submenu-title.active>.submenu-button i {
+    color: #999;
+}
+
+#subMenu .depth-0 {
+    display: none;
+}
+
+#subMenu .depth-0>.submenu-content {
+    display: none;
+}
+
+#subMenu .depth-0>.submenu-title {
+    display: none;
+}
+
+#subMenu .depth-0>.submenu-list {
+    display: block !important;
+    padding: 0 !important;
+}
+
+.layout-dialog {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    min-height: 600px;
+    min-width: 1000px;
+}
+
+.layout-dialog .layout-dialog-mark {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.2;
+    filter: alpha(opacity=20);
+}
+
+.layout-dialog .layout-dialog-mark:not(IE9Only) {
+    filter: alpha(opacity=100);
+}
+
+.layout-dialog .layout-dialog-box {
+    width: 600px;
+    height: 400px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    transition: all 0.2s;
+    opacity: 0;
+    transform: scale(0);
+}
+
+.layout-dialog .layout-dialog-title {
+    cursor: move;
+    user-select: none;
+    height: 40px;
+    width: 100%;
+    background: #3170BE;
+    position: absolute;
+}
+
+.layout-dialog .layout-dialog-title span {
+    line-height: 40px;
+    padding: 0 0 0 10px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.layout-popup {
+    position: relative;
+}
+
+.layout-dialog .layout-dialog-close {
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 0;
+    right: 0;
+    color: #fff;
+    font-weight: bold;
+}
+
+.layout-dialog .layout-dialog-close:hover {
+    background: #5A8DCB;
+}
+
+.layout-dialog .layout-dialog-body {
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    bottom: 0;
+    overflow-y: auto;
+}
+
+.layout-dialog .layout-dialog-resize {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    bottom: 0px;
+    right: 0;
+    cursor: nwse-resize;
+}
+
+.form-control {
+    font-size: 15px;
+    height: 30px;
+    line-height: 1.3;
+    box-sizing: border-box;
+    border: 1px solid #d2d2d2;
+    color: #666;
+    border-width: 1px;
+    border-style: solid;
+    background-color: #fff;
+    border-radius: 2px;
+    font-family: "Microsoft YaHei", "微软雅黑", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+}
+
+.form-control::-webkit-control-placeholder {
+    line-height: 1.3;
+    color: #aaa;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding-left: 10px;
+}
+
+.form-control:hover {
+    border-color: #d2d2d2;
+}
+
+.form-control:focus {
+    border-color: #c9c9c9!important;
+    outline: none;
+}
+
+.form-control.form-error {
+    border-color: #e62020;
+}
+
+.form-control.form-error:focus {
+    border-color: #e62020!important;
+    outline: none;
+}
+
+.form_select {
+    width: 100%;
+    height: 30px;
+    position: relative;
+    border-radius: 2px;
+}
+
+.form_select .form_select_nameBox {
+    border-radius: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    height: 30px;
+    line-height: 30px;
+    color: #666;
+    position: relative;
+    background: #fff;
+    border: 1px solid #d2d2d2;
+}
+
+.form_select.form-error .form_select_nameBox {
+    border-color: #e62020!important;
+    outline: none;
+}
+
+.form_select .form_select_name {
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    bottom: 0px;
+    right: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.form_select .form_select_nameBox span {
+    position: absolute;
+    display: block;
+    top: 0px;
+    width: 33px;
+    right: 0px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.form_select.active .form_select_nameBox span {
+    color: #66afe9;
+}
+
+.form_select.active .form_select_name {
+    color: #666 !important;
+}
+
+.form_select.active .form_select_nameBox {
+    border-color: #66afe9;
+    outline: 0;
+}
+
+.form_select .form_select_optionBox {
+    display: none;
+    min-width: 100%;
+    position: absolute;
+    top: 30px;
+    z-index: 3;
+    background: #fff;
+    right: 0px;
+    border: 1px solid #ccc;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.form_select .form_select_option {
+    cursor: pointer;
+    height: 30px;
+    line-height: 30px;
+    font-size: 13px;
+    padding: 0 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 13px;
+    color: #666;
+}
+
+.form_select .form_select_option:hover {
+    background: #e4e4e4;
+    color: #666;
+}
+
+/* .form_select .form_select_option.active { background: #1e90ff;color: #fff; } */
+
+.form_select .form_select_option.active {
+    background: #3170BE;
+    color: #fff;
+}
+
+.form_radio {
+    line-height: 40px;
+    font-size: 17px;
+    color: #999;
+}
+
+.form_radioItem_layout {
+    position: absolute;
+    left: 110px;
+    width: 250px;
+}
+
+.form_radio_Item {
+    padding-right: 10px;
+    line-height: 27px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.form_radio_Item .form_radio_choose {
+    float: left;
+    cursor: pointer;
+    display: block;
+    width: 30px;
+    height: 40px;
+    background-position: 10px -140px;
+}
+
+.form_radio_Item .form_radio_choose {
+    text-align: center;
+    line-height: 40px;
+}
+
+.form_radio_Item .form_radio_choose.active {
+    background-position: -90px -140px;
+    color: #3eafe0
+}
+
+.form_radio_Item.disable .form_radio_choose.active {
+    background-position: -90px -90px;
+}
+
+.form_radio_Item .form_radio_name {
+    float: right;
+    font-size: 16px;
+    line-height: 40px;
+    color: #333;
+}
+
+.form_radio_Item.disable .form_radio_name {
+    color: #999;
+}
+
+.layui-input-block textarea {
+    height: 172px !important;
+}
+
+/* wy 自定义样式 */
+
+.commonDetail .layui-col-md9,.commonDetail .layui-col-md8 {
+    padding-right: 40px;
+}
+
+/* .commonDetail .layui-col-md3{padding-left: 40px;} */
+
+.commonDetail input{
+    height: 38px !important;
+}
+.commonDetail .boderleft {
+    padding-right: 40px !important;
+    border-right: 1px dashed #ccc !important;
+}
+/* 公文收发文表单 */
+.commonDetail .FUI-form .FUI-form-item .layui-form-label{
+    line-height: 29px !important;
+}
+.commonDetail .form_select{
+    height: 38px !important;
+}
+.commonDetail .form_select .form_select_nameBox{
+    height: 38px !important;
+    line-height: 38px !important;
+}
+
+.commonDetail .form_select .form_select_name{
+    line-height: 38px !important;
+}
+
+.FUI-table-layout .layui-form-item {
+    border-bottom: solid 1px rgba(141, 141, 141, 0.2);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+
+#statistics .layui-btn:hover .buttonIcon.add{background-position:0 0px}
+#reference .layui-btn:hover .buttonIcon.add{background-position:0 0px}
+#chromatography .layui-btn:hover .buttonIcon.add{background-position:0 0px}
+
+#officialQuery .layui-btn:hover .buttonIcon.exchange{background-position:-650px 0px}
+
+.FD-UI-table-box .FD-UI-default-row:nth-child(even) {
+    background: #f0f0f0;
+}

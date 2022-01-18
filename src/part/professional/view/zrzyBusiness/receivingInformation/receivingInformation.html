@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>收件资料</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="Author" content="larry"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <style type="text/css">
+        /*.menu li{background:rgb(51,171,160)!important; color:#fff!important;}*/
+        .system-title-box .layui-tab-title li.layui-this {
+            border-radius: 5px 5px 0 0;
+            background: #fff;
+            color: #888;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .system-title-box .layui-tab-title li {
+            background: rgb(51, 171, 160);
+            color: #fff;
+            border-radius: 5px 5px 0 0;
+            margin-left: 10px;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .layui-tab-title .layui-this:after {
+            border-radius: 5px 5px 0 0;
+            height: 31px;
+        }
+
+        .m0 {
+            margin: 0 !important;
+        }
+
+        .leftmenu .ztree li {
+            padding: 0;
+            margin: 10px 0 10px 10px !important;
+            list-style: none;
+            text-align: left;
+            white-space: inherit !important;
+            outline: 0;
+            text-indent: -35px;
+        }
+
+        .leftmenu li[class=level1] > ul {
+            margin-top: -10px !important;
+            margin-bottom: 15px !important;
+        }
+
+        .leftmenu a[class=level1] > .node_name {
+            margin-top: -25px;
+            margin-left: -40px;
+            border: #ace0fc 2px solid;
+            border-radius: 0 25px 25px 0;
+            padding: 5px 5px 5px 40px !important;
+            display: block !important;
+            text-indent: 0;
+        }
+
+        .leftmenu a[class=level0] > .node_name {
+            margin-top: -25px;
+            margin-left: -40px;
+            border: #ace0fc 2px solid;
+            border-radius: 0 25px 25px 0;
+            padding: 5px 5px 5px 40px !important;
+            display: block !important;
+            text-indent: 0;
+        }
+
+        .leftmenu .ztree li a.curSelectedNode {
+            background-color: transparent !important;
+            border: none !important;
+        }
+
+        .leftmenu .ztree li a.curSelectedNode > .node_name {
+            margin-top: -25px;
+            margin-left: -40px;
+            border-radius: 0 25px 25px 0;
+            padding: 5px 5px 5px 40px !important;
+            display: block !important;
+            text-indent: 0;
+            border: #1a97d7 2px solid;
+            background-color: transparent;
+        }
+
+        .leftmenu .ztree .level2 a.curSelectedNode > .node_name {
+            border-radius: 0 25px 25px 0;
+            padding: 5px 5px 5px 40px !important;
+            display: inline !important;
+            text-indent: 0;
+            border: none;
+            background-color: transparent;
+            color: #1a97d7;
+            font-weight: bold;
+        }
+
+        .leftmenu .ztree li a {
+            padding: 1px 3px 0 0;
+            margin: 0;
+            cursor: pointer;
+            height: 17px;
+            color: #333;
+            background-color: transparent;
+            text-decoration: none;
+            vertical-align: baseline !important;
+            display: inline !important;
+        }
+
+        .leftmenu .ztree li span {
+            line-height: 16px;
+            margin-right: 2px;
+        }
+
+        .ajbt td {
+            padding: 0;
+            text-align: center;
+            height: 20px;
+        }
+
+        #operateButton .layui-btn + .layui-btn {
+            margin-left: 0 !important;
+
+        }
+
+        body .demo-class .layui-layer-title {
+            background: #3170be !important;
+            color: #FFFFFF !important;
+        }
+        .ajbt .ztree li span.button{
+            background-image:url(../../../../static/ztree/zTreeStyle/img/zTreeStandard1.png)!important;
+        }
+        .ys-text{width:100%; height:27px; border:none;padding:0;}
+    </style>
+</head>
+
+<body>
+<div class="larry-row larry-col-space15">
+    <div class="larry-col-lg12 larry-col-md12 larry-col-sm12 larry-col-xs12" style="padding: 10px">
+        <section>
+            <div id="operateButton" style="text-align:left;" class="layui-upload">
+                <button class="layui-btn layui-btn-sm layui-btn-normal" type="button" id="batchDownload"
+                        style="margin-top:20px;width: 90px;">批量下载
+                </button>
+                <button class="layui-btn layui-btn-sm layui-btn-normal" type="button" id="createJnwj"
+                        style="margin-top:20px;width: 130px;">创建卷内文件
+                </button>
+                <button class="layui-btn layui-btn-sm layui-btn-normal" type="button" style="margin-top:20px;;"
+                        id="createJnwjByMB"> 根据模板创建文件
+                </button><!--模板-->
+                <button class="layui-btn layui-btn-sm layui-btn-normal" type="button" id="delWj"
+                        style="margin-top:20px;width: 90px;">删除文件
+                </button>
+                <button class="layui-btn layui-btn-sm layui-btn-normal" type="button" id="uploadAttachment"
+                        style="margin-top:20px;width: 90px;">上传附件
+                </button>
+                <button class="layui-btn layui-btn-sm layui-btn-normal" type="button" id="delAttachment"
+                        style="margin-top:20px;width: 90px;">删除附件
+                </button>
+                <!--<button class="layui-btn layui-btn-sm layui-btn-normal" type="button" id="download"
+                        style="margin-top:20px;width: 90px;">下载附件
+                </button>-->
+            </div>
+            <div class="larry-card-body ztree-box">
+                <div class="leftmenu"  id="leftmenu" style="overflow:auto;width:30%; padding-left:40px;float: left;">
+                    <ul id="treeDemo" class="ztree larry-ztree-demo1"></ul>
+                </div>
+                <div  id="rightmenu" style="width:67%;border:none;text-align:center;float: left;overflow:auto;">
+                    <ul class="box" style="margin-left:50px;">
+                        <!--startprint-->
+                        <div id="printID">
+                            <div id="boxContent">
+                                <form class="layui-form" id="ajTable">
+                                    <table class="layui-table ajbt" style="width:50%;margin: 0 auto;">
+                                        <tr style="height:60px;">
+                                            <td colspan="4">文件模板信息</td>
+                                        </tr>
+                                        <tr>
+                                            <td>文件题名<span style="color:red;">*</span></td>
+                                            <td colspan="3"><input type="text" class="ys-text" id="fileName" name="fileName" maxlength="500">
+                                        </tr>
+                                    </table>
+                                    <div style="margin-left:5%;margin-top:20px;"><button class="layui-btn layui-btn-sm layui-btn-normal" type="button" id="saveWj">&nbsp;保&nbsp;&nbsp;&nbsp;&nbsp;存&nbsp;</button></div>
+                                    <input type="hidden" id="id">
+                                </form>
+                            </div>
+                            <div id="ajmb" style="width:50%;display: none;margin: 0 auto;border:1px solid #ccc;">
+                                <h2 class="layui-colla-title" style="padding:0;text-align:center;height:60px;line-height:57px;margin: 0;font-size: 16px">档案模板</h2>
+                                <div class="layui-colla-content layui-show">
+                                    <ul id="mbTree" class="ztree larry-ztree-demo1" style="overflow:auto;width: 580px;padding-left: 20px;font-size: 16px">
+                                    </ul>
+                                </div>
+                                <div style="text-align: center;">
+                                    <button class="layui-btn layui-btn-normal layui-btn-sm" style="padding:0 30px;margin-bottom: 5px;" id="addWj">添加</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--endprint-->
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<ul id="imgs" style="display: none">
+
+</ul>
+
+<style type="text/css">
+    div#rMenu {
+        position: absolute;
+        visibility: hidden;
+        top: 0;
+        text-align: left;
+        padding: 4px;
+    }
+
+    div#rMenu a {
+        padding: 8px 15px 8px 15px;
+        background-color: #cad4e6;
+        vertical-align: middle;
+        display: block;
+    }
+
+</style>
+<input type="hidden" id="wjid">
+<input type="hidden" id="wjmc">
+<input type="hidden" id="ajid">
+<input type="hidden" id="fjid">
+<input type="hidden" id="fjPath">
+</body>
+
+</html>

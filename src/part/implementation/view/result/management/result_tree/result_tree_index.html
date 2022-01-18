@@ -1,0 +1,62 @@
+<!----------------------------------------
+* 规划成果管理-成果一棵树
+* 杨爽
+* 2020-10-13 11:30:59
+------------------------------------------->
+<style>
+    .layout-template-view{
+        background:rgb(239,241,242);
+        padding:0!important;
+    }
+    .tree_box{
+        width:35%;
+        height:850px;
+        background:#fff;
+        margin-right:.5%;
+        float:left;
+        overflow:auto;
+    }
+    .ztree{
+        margin:0 40px 20px 30px;
+    }
+    .word_box{
+        width:64.5%;
+        height:850px;
+        background:#fff;
+        float:left;
+        position: relative;
+    }
+    .pdf_point{
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    #treeRules *{
+       font-size:16px!important;
+   }
+   #selectForm{
+       /* width:800px; */
+       margin:3% 2% 0 1.4%;
+   }
+   .form_select_nameBox{
+       width:160px!important;
+     
+   }
+  .diyBtn1{
+    transform: scale(0.8);
+  }
+  .ztree li a {
+    height: fit-content;
+  }
+</style>
+
+<div class="tree_box">
+    <div id="selectForm">
+        
+    </div>
+    <ul id="treeRules" class="ztree" ></ul>
+</div>
+<div class="word_box">
+    <div class="pdf_point" id="pdf_point"></div>
+</div>
+

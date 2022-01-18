@@ -1,0 +1,49 @@
+<style>
+    #dialog {
+        box-sizing: border-box;
+        position: relative;
+        padding: 30px;
+        height: 100%;
+    }
+
+    #list {
+        width: 100%;
+        height: 85%;
+    }
+
+    #buttons {
+        float: right;
+        margin-bottom: 20px;
+        margin-top: 40px;
+    }
+
+    .confirm {
+        margin: 35px 20px;
+        background-color: #5294d7;
+        color: #FFF;
+    }
+    .title{
+        position: absolute;
+        left: 40%;
+        top: 10%;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .FUI-table-layout .layui-form-item{
+        border-bottom: solid 1px rgba(141, 141, 141, 0.2);
+        padding-bottom: 60px !important;
+        margin-bottom: 20px;
+    }
+</style>
+<div id="dialog">
+    <div class="title"></div>
+    <div id="list"></div>
+    <div id="buttons">
+        <div class="layui-btn layui-btn-ys confirm" id="confirm">
+            生成报告
+        </div>
+        <div class="layui-btn layui-btn-ys" id="cancel">
+            返回
+        </div>
+    </div>
+</div>

@@ -1,0 +1,81 @@
+{
+  "_args": [
+    [
+      "git+https://github.com/SuperMap/mapbox-print-pdf.git#enhance",
+      "C:\\wdd\\git-project\\自然资源一张图新01\\hn_zrzy_nginx"
+    ]
+  ],
+  "_from": "git+https://github.com/SuperMap/mapbox-print-pdf.git#enhance",
+  "_id": "mapbox-print-pdf@git+https://github.com/SuperMap/mapbox-print-pdf.git#08dca8f1ec4dced771c5dd0238f7b8eed3c316fd",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/mapbox-print-pdf",
+  "_phantomChildren": {
+    "css-line-break": "1.0.1",
+    "jsdom": "8.5.0",
+    "omggif": "1.0.7",
+    "promise-polyfill": "8.1.0",
+    "rgbcolor": "1.0.1",
+    "stackblur-canvas": "2.2.0",
+    "xmldom": "0.1.31"
+  },
+  "_requested": {
+    "type": "git",
+    "raw": "git+https://github.com/SuperMap/mapbox-print-pdf.git#enhance",
+    "rawSpec": "git+https://github.com/SuperMap/mapbox-print-pdf.git#enhance",
+    "saveSpec": "git+https://github.com/SuperMap/mapbox-print-pdf.git#enhance",
+    "fetchSpec": "https://github.com/SuperMap/mapbox-print-pdf.git",
+    "gitCommittish": "enhance"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "git+https://github.com/SuperMap/mapbox-print-pdf.git#08dca8f1ec4dced771c5dd0238f7b8eed3c316fd",
+  "_spec": "git+https://github.com/SuperMap/mapbox-print-pdf.git#enhance",
+  "_where": "C:\\wdd\\git-project\\自然资源一张图新01\\hn_zrzy_nginx",
+  "author": {
+    "name": "Eddie Larsson"
+  },
+  "bugs": {
+    "url": "https://github.com/Eddie-Larsson/mapbox-print-pdf/issues"
+  },
+  "dependencies": {
+    "canvg": "^3.0.5",
+    "css-initials": "^0.2.0",
+    "html2canvas": "^1.0.0-rc.5",
+    "jspdf": "^1.5.3"
+  },
+  "description": "A library for printing mapbox maps as pdfs",
+  "devDependencies": {
+    "@jsdevtools/browserify-banner": "^2.0.2",
+    "@webcomponents/template": "^1.2.2",
+    "browserify": "^16.1.0",
+    "uglifyify": "^4.0.5",
+    "watchify": "^3.10.0",
+    "watchify-server": "^1.0.2"
+  },
+  "files": [
+    "js"
+  ],
+  "homepage": "https://github.com/Eddie-Larsson/mapbox-print-pdf#readme",
+  "keywords": [
+    "mapbox",
+    "print",
+    "pdf",
+    "high-resolution"
+  ],
+  "license": "MIT",
+  "main": "js/mapbox-print-pdf.js",
+  "name": "mapbox-print-pdf",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eddie-Larsson/mapbox-print-pdf.git"
+  },
+  "scripts": {
+    "build": "browserify --standalone mapboxgl.mapPrint -g uglifyify js/mapbox-print-pdf.js -o dist/mapbox-print-pdf.min.js -p [ @jsdevtools/browserify-banner --file banner.txt ]",
+    "build-demo": "browserify docs/js/index.js -o docs/build/bundle.js",
+    "start": "watchify-server docs/js/index.js --port 8000 --index index.html --dir docs",
+    "watch-dev": "watchify docs/js/index.js -v -o docs/build/bundle.js"
+  },
+  "version": "0.4.5"
+}

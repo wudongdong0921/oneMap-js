@@ -1,0 +1,206 @@
+<!----------------------------------------
+* 评价详情
+* 戴飞
+* 2020-11-23 13:10:30
+------------------------------------------->
+<style scoped>
+    #alertDetails {
+        display: flex;
+        background-color: rgb(240, 240, 240);
+        height: 100%;
+    }
+
+    #alertDetails #tree {
+        flex: .3;
+        height: 100%;
+        overflow: auto;
+        background-color: #FFF;
+        padding-top: 40px;
+    }
+
+    .currentTree {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    #alertDetails #list {
+        flex: 1;
+        background-color: #FFF;
+    }
+
+    .layout-table-paging {
+        display: none;
+    }
+
+    .layout-template-view {
+        padding: 0;
+    }
+
+    .layui-input-block {
+        padding: 3px 0;
+        box-sizing: border-box;
+    }
+
+    #form {
+        margin-top: 20px;
+    }
+
+    .search {
+        margin: 3px 20px;
+        background-color: #5294d7;
+        color: #FFF;
+    }
+
+    .reset {
+        margin: 3px 20px;
+        margin-left: 0;
+    }
+
+    .layui-table-tool-temp {
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .layui-table-tool {
+        background-color: #FFF;
+        border-width: 0;
+    }
+
+    th {
+        background-color: #5294d7 !important;
+        color: #FFF;
+    }
+
+    .table {
+        margin: 0 10px 0 20px;
+    }
+
+    .layui-table-view {
+        border: none;
+    }
+
+    .layui-table-box {
+        border: 1px solid #eee;
+    }
+
+    .layui-table-header {
+        border: none;
+    }
+
+    .form_select .form_select_optionBox {
+        z-index: 900;
+    }
+    #ztree1 .ztree li a.curSelectedNode {
+     background-color: #676666;
+     color: #fff;
+ }
+ #ztree1 .ztree li a.curSelectedNode:hover{
+     background-color: #676666;
+     color: #fff;
+ }
+ #ztree1 .ztree li a:hover {
+     background-color: #eee;
+     color:#333;
+ }
+ #ztree1 .ztree li a {
+     padding-left: 10px;
+     box-sizing: border-box;
+ }
+ .ztree li span.button.noline_open{
+     background-image: none;
+     color: #c0c4cc;
+     font-size: 12px;
+     transform: rotate(0deg);
+     transition: transform .3s ease-in-out;
+     height: 15px !important;
+     width: 15px !important;
+     text-align: center;
+     font-family: layui-icon !important;
+     margin-top: 0 !important;
+ }
+ .ztree li span.button.noline_open:before{
+     content:"";
+     width:0;height:0;
+     display:block;
+     position: relative;
+     border-color:#c0c4cc #fff0 #fff0;
+     border-width:6px 5px 0 5px;
+     border-style:solid;
+     top: 0;
+     left: 20%;
+ }
+
+ .ztree li span.button.noline_close{
+     background-image: none;
+     color: #c0c4cc;
+     font-size: 12px;
+     transform: rotate(-90deg);
+     transition: transform .3s ease-in-out;
+     height: 15px !important;
+     width: 15px !important;
+     text-align: center;
+     font-family: layui-icon !important;
+     margin-top: 0 !important;
+ }
+
+ .ztree li span.button.noline_close:before{
+     content:"";
+     width:0;height:0;
+     display:block;
+     position: relative;
+     /* 三角形---旋转 */
+     border-color:#c0c4cc #fff0 #fff0;
+     border-width:6px 5px 0 5px;
+     border-style:solid;
+     top: 0;
+     left: 20%;
+ } 
+ /* .layui-table-box{
+     overflow-x: scroll;
+ }
+ .layui-table-header{
+    overflow-x: scroll;
+ }
+
+ .layui-table-body{
+    overflow-x: scroll;
+ } */
+</style>
+<div id="alertDetails">
+    <div class="layui-col-md3" style="position: absolute; width: 23%; top: 20px;">
+        <div class="layui-form-item">
+            <label class="layui-form-label">行政区划:</label>
+            <div class="layui-input-block" id="planningResultCode"></div>
+        </div>
+    </div>
+    <div id="tree" class="tree currentTree">
+        
+    </div>
+    <div id="list" style="width: 20%;">
+        <div>
+            <div id="form">
+                <div class="layui-row">
+                    <div class="layui-col-md3">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">年份:</label>
+                            <div class="layui-input-block" id="flowstatus"></div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md3">
+                        <div class="layui-form-item">
+                            <div class="layui-btn layui-btn-sm layui-btn-ys search" id="search">
+                                查询
+                            </div>
+                            <div class="layui-btn layui-btn-sm layui-btn-ys reset" id="reset">
+                                重置
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="table" style="overflow-x: scroll;">
+                <table id="table"></table>
+            </div>
+        </div>
+    </div>
+</div>

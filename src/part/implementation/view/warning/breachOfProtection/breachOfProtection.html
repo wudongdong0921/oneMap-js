@@ -1,0 +1,106 @@
+<!----------------------------------------
+* 违反保护要求预警
+* 戴飞
+* 2020-11-23 13:10:30
+------------------------------------------->
+
+<style type="text/css">
+  #card {
+    width: 100%;
+    background-color: #f2f2f2;
+    padding: 10px 10px;
+    height: 100%;
+    display: flex;
+    box-sizing: border-box;
+  }
+  #card .card-height {
+    height: 400px;
+    padding: 16.5px;
+  }
+  #card .card-calendar {
+    height: 343px;
+  }
+  #card .card-title {
+    display: inline-block;
+    padding: 0 10px;
+    height: 100%;
+  }
+  #card .layui-col-md{
+    clear: both;
+  }
+  /* #card .card-active{
+     background: #e5f2f7;
+     border: 1px solid #e5f2f7 !important;
+  } */
+  #card .layui-card{
+    border: 1px solid#f2f2f2;
+  }
+  #card .card-height{
+    padding: 15px 15px 0px 15px;
+    height: 360px;
+  }
+  #card .breach-left{
+    flex: 0.8;
+    height: 100%;
+    overflow: auto;
+    background: #fff;
+  }
+  #card .breach-center{
+    flex: 1.5;
+    height: 100%;
+    background: #fff;
+    margin: 0 10px 0 10px;
+    position: relative;
+  }
+  #card .breach-right{
+    flex: 1;
+    height: 100%;
+    background: #fff;
+    position: relative;
+    padding: 0 10px;
+  }
+  #card .breach-center .area{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 20px;
+  }
+  #card .breach-center .area .area-tree{
+    position: relative;
+    z-index: 99;
+    display: inline-block;
+  }
+  #card .breach-center .map{
+    width: 100%;
+    height: 100%;
+  }
+  #card .layui-card-header .card-title{
+    display: flex;
+    justify-content: space-between;
+  }
+  #card .breach-right .polyline{
+    height: 50%;
+    padding-top: 20px;
+  }
+  #card .breach-right .list{
+    height: 50%;
+  }
+  .layout-table-paging{
+    display: none;
+  }
+</style>
+<div id="card">
+  <div class="breach-left"></div>
+  <div class="breach-center">
+    <div class="area">
+      <img src="../../../../../../public/static/icon//area.svg" width="20px" alt="">
+      <div class="area-tree"></div>
+    </div>
+    <div class="map"></div>
+  </div>
+  <div class="breach-right">
+    <div class="polyline"></div>
+    <div class="list"></div>
+  </div>
+</div>

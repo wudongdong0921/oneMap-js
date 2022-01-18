@@ -1,0 +1,76 @@
+<!----------------------------------------
+* 重大项目监测
+* 戴飞
+* 2020-11-23 13:10:30
+------------------------------------------->
+
+<style>
+  #alertDetails{
+    display: flex;
+    height: 100%;
+  }
+  #alertDetails .map-box{
+    flex: 1;
+  }
+  #alertDetails .map-box .area{
+    padding: 20px;
+    position: relative;
+  }
+  #alertDetails .map-box .area .area-tree{
+    position: relative;
+    z-index: 99;
+    display: inline-block;
+  }
+  #alertDetails .map-box #map{
+    height: 80%;
+  }
+  #alertDetails .list-box{
+    flex: 1;
+    position: relative;
+  }
+  #alertDetails .list-box .pie-tab{
+    display: flex;
+    background: #fff;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  #alertDetails .list-box .pie-tab .pie-tab-item{
+    border: 1px solid #f2f2f2;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  #alertDetails .list-box .pie-tab .pie-tab-active{
+    background: #5294d7;
+    color: #fff;
+  }
+
+
+
+
+
+</style>
+<div id="alertDetails">
+  <div class="map-box">
+    <div class="area">
+      <img src="../../../../../../public/static/icon//area.svg"width="20px" alt="">
+      <div class="area-tree"></div>
+    </div>
+    <div id="map"></div>
+  </div>
+  <div class="list-box">
+    <!-- <div class="pie-tab">
+      <p class="pie-tab-item pie-tab-active">省级</p>
+      <p class="pie-tab-item">市级</p>
+      <p class="pie-tab-item">县级</p>
+    </div> -->
+    <div id="list"></div>
+    <div id="zujian"></div>
+  </div>
+
+  <div id="eachartId" style="width: 500px;height: 500px;position: absolute;"></div>
+
+
+  <div class=""></div>
+
+  <!-- <div id="zujian"></div> -->
+</div>

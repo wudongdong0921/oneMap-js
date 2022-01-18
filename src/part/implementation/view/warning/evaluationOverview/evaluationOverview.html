@@ -1,0 +1,289 @@
+<!----------------------------------------
+* 评估总览
+* 戴飞
+* 2020-11-23 13:10:30
+------------------------------------------->
+
+<style type="text/css">
+  .layout-template-view {
+    padding: 0;
+  }
+
+  .main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    box-sizing: border-box;
+    background: #f2f2f2;
+  }
+
+  .layout_left {
+    flex: 0.7;
+    height: 100%;
+    background: #f2f2f2;
+  }
+
+  .layout_center {
+    flex: 1.5;
+    height: 100%;
+    background: #FFF;
+    margin: 0 5px;
+    position: relative;
+  }
+
+  .layout_right {
+    flex: 0.8;
+    height: 100%;
+    background: #f2f2f2;
+  }
+
+  .layout_top {
+    height: 50%;
+    margin-bottom: 5px;
+    background: #FFF;
+    padding: 20px 15px;
+    box-sizing: border-box;
+    overflow-y: scroll;
+  }
+
+  .layout_bottom {
+    height: 50%;
+    background: #FFF;
+    padding: 20px 15px;
+    box-sizing: border-box;
+  }
+
+  .layout_bottom_right {
+    height: 50%;
+    background: #FFF;
+    padding: 20px 15px;
+    box-sizing: border-box;
+  }
+
+  .layout_label {
+    height: 20px;
+    line-height: 20px;
+    font-size: 16px;
+  }
+
+
+
+  .area {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    z-index: 10;
+  }
+
+  .area .area-tree {
+    position: relative;
+    z-index: 99;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  #canvas {
+    box-sizing: content-box;
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 100%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 10px solid rgba(154, 205, 50, .8);
+  }
+
+  .overview {
+    height: 170px;
+    width: 170px;
+    margin: 50px auto;
+    background: #d4e9f2;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .overview_inner {
+    width: 100%;
+    height: 100%;
+    /* margin-left: -2px; */
+  }
+
+  .progress_div {
+    display: flex;
+  }
+
+  .progress_bg {
+    height: 10px;
+    background: #f2f2f2;
+    border-radius: 5px;
+    flex: 1;
+    margin: 0 15px;
+    margin-top: 3px;
+  }
+
+  .progress_inner {
+    height: 10px;
+    background: #2a5293;
+    border-radius: 5px;
+  }
+
+  .progress_label {
+    height: 16px;
+    line-height: 16px;
+    font-size: 14px;
+  }
+
+  .progress_value {
+    height: 16px;
+    line-height: 16px;
+    font-size: 14px;
+    color: #2a5293;
+  }
+
+  .overview_values {
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    top: 50px;
+    left: 0;
+    text-align: center;
+    color: #285293;
+  }
+
+  .overview_num {
+    font-size: 30px;
+  }
+
+  .overview_aera {
+    font-size: 20px;
+  }
+
+  .labels {
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    right: 20px;
+    bottom: 100px;
+  }
+
+  .flex_wrap {
+    display: flex;
+  }
+
+  .label_color {
+    width: 20px;
+    height: 15px;
+    border-radius: 4px;
+    margin-right: 20px;
+    margin-top: 3px;
+  }
+
+  .color_under_60 {
+    background: #ff8848;
+  }
+
+  .color_60_80 {
+    background: #fcfcd4;
+  }
+
+  .color_80_100 {
+    background: #c2e5e5;
+  }
+
+  .label_grade_scope {
+    line-height: 20px;
+    color: #027DB4;
+    font-size: 15px;
+  }
+
+  .progress_value {
+    min-width: 60px;
+    max-width: 60px;
+  }
+  
+  .mapboxgl-popup-tip{
+    display: none;
+  }
+  .mapboxgl-popup-content{
+    padding: 0;
+    background: rgba(0, 0, 0, 0);
+    box-shadow : none;
+  }
+  .mapPopup_mapMessage {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    color: #fff;
+    border-radius: 4px;
+    padding-bottom: 5px;
+  }
+
+  .mapPopup_mapMessage_item {
+    margin: 5px 0;
+    margin-bottom: 0;
+  }
+
+  .mapPopup_mapMessage_image {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    vertical-align: middle;
+    margin: 0 10px 0 0;
+    border-radius: 5px;
+  }
+
+  .mapPopup_mapMessage_title {
+    font-size: 14px;
+  }
+</style>
+<div class="main">
+  <div class="layout_left">
+    <div class="layout_top">
+      <div class="layout_label">评估总览</div>
+      <div class="overview">
+        <canvas class="overview_inner" id="wave"></canvas>
+        <div class="overview_values">
+          <div class="overview_num" id="overview_num"></div>
+          <div class="overview_aera" id="overview_aera"></div>
+        </div>
+      </div>
+      <div id="progress_list"></div>
+    </div>
+    <div class="layout_bottom"></div>
+  </div>
+  <div class="layout_center">
+    <div class="area">
+      <img src="../../../../../../public/static/icon//area.svg" width="20px" alt="">
+      <div class="area-tree"></div>
+    </div>
+    <div class="map"></div>
+    <div id="play_line"></div>
+    <div class="labels">
+      <div class="flex_wrap">
+        <div class="label_color color_under_60"></div>
+        <div class="label_grade_scope">60分以下</div>
+      </div>
+      <div class="flex_wrap">
+        <div class="label_color color_60_80"></div>
+        <div class="label_grade_scope">60-80分</div>
+      </div>
+      <div class="flex_wrap">
+        <div class="label_color color_80_100"></div>
+        <div class="label_grade_scope">80-100分</div>
+      </div>
+    </div>
+  </div>
+  <div class="layout_right">
+    <div class="layout_top">
+      <div class="layout_label">排行榜</div>
+      <div id="ranking_list" style="margin-top: 20px;"></div>
+    </div>
+    <div class="layout_bottom_right">
+      <div class="layout_label">分类评分</div>
+      <div class="switch_btns"></div>
+      <div class="radar_echart" style="height: 300px;"></div>
+    </div>
+  </div>
+</div>

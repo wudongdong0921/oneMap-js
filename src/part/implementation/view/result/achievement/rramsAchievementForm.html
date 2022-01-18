@@ -1,0 +1,263 @@
+<div class="commonDetail" id="form-data-container">
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md9">
+            <div class="title" id="formTitle">成果汇交基本信息</div>
+            <div class="layui-form Container boderleft" style="font-size: 16px;">
+                <div id="formContentCG"></div>
+                <div id="formContentDb" style="display: none;"></div>
+                <form id="formContent">
+                    <input type="hidden" id="cgxxbId" name="cgxxbId" value="0"/>
+                    <input type="hidden" id="planningResultName" name="planningResultName"/>
+                    <input type="hidden" id="huizhengWorkid" name="huizhengWorkid"/>
+                    <input type="hidden" id="huizhengFlowid" name="huizhengFlowid"/>
+                    <input type="hidden" id="planningResultId" name="planningResultId"/>
+                    <input type="hidden" id="inventoryStatus" name="inventoryStatus" value="0"/>
+                    <input type="hidden" id="planningResultCode" name="planningResultCode" value="0"/>
+                </form>
+            </div>
+            <div class="layui-form Container boderleft">
+                <div class="layui-col-space10">
+                    <div class="layui-col-md12 ">
+                        <div id="uploadIdFile" class="uploadA"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md3">
+            <div style="margin-top: 10px;min-height: 113px;" class="functionality-btn"></div>
+            <div class="yijianRight">
+                <div>
+                    <div>
+                        <div class="top-examine-item" style="margin-bottom: 15px;">    
+                            <div class="bg tit">        
+                                <span class="fr pl10 " style="float: left">
+                                    <span class="examine-text-status"><sup style="color: red">*</sup>成果汇交说明</span>
+                                </span>    
+                            </div>   
+                            <div class="examine-textarea-style shenpi">        
+                                <textarea readonly="readonly" lay-verify="required" name="submitReview" id="submitReview" maxlength="200" lay-vertype="alert" class="layui-textarea textarea-content-style form-control.form-error" style="height: 120px"></textarea>
+
+                            </div>
+                        </div>
+                        <div class="examine-main-style"></div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <div class="top-examine-item" style="margin-bottom: 15px;">    
+                            <div class="bg tit">        
+                                <span class="fr pl10 " style="float: left">
+                                    <span class="examine-text-status"><sup style="color: red">*</sup>省自然资源厅审核意见</span>
+                                </span>    
+                            </div>   
+                            <div class="examine-textarea-style shenpi">        
+                                <textarea readonly="readonly" lay-verify="required" name="examineOpinion" id="examineOpinion" maxlength="200" lay-vertype="alert" class="layui-textarea textarea-content-style" style="height: 120px"></textarea>        
+
+                            </div>
+                        </div>
+                        <div class="examine-main-style"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    textarea[readonly=readonly] {
+        background: #efefef;
+    }
+    .layui-col-md11{
+        width: 73% !important;
+    }
+    label{
+        position: relative;
+    }
+    #btn{
+        margin-right: 5px;
+        height: 24px !important;
+        font-size: 13px !important;
+        line-height: 23px !important;
+        cursor: pointer !important;
+    }
+    #btn .buttonIcon{
+        margin: 1px 5px 0 0 !important;
+    }
+    #file{
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+    }
+
+    #inspectionAdd{
+        padding:40px 50px 0 20px;
+    }
+    #inspectionAddBottom{
+        padding:0 50px 0 20px;
+    }
+    .form_btn{
+        position: relative;
+        left: 50%;
+        top:20px;
+        height: 70px;
+        width: 230px;
+    }
+    .btn div:first-child{
+        margin-right: 50px;
+    }
+    /*进度条样式*/
+    .container{
+        width: 100%;
+        height: 10px;
+        background-color: #ccc;
+        border-radius: 5px;
+    }
+    .progress{
+        position: absolute;
+        height: 10px;
+        background-color: orange;
+        display: inline-block;
+        border-radius: 5px;
+    }
+    .commonDetail {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        padding: 20px;
+        padding-right: 35px;
+    }
+
+    .commonDetail html {
+        color: #000;
+    }
+
+    .commonDetail .title {
+        height: 130px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        font-weight: 400;
+    }
+
+    .commonDetail .form_select_name {
+        font-size: 16px;
+    }
+
+    .commonDetail .Container {
+        padding: 0 10px;
+    }
+
+    .commonDetail .layui-btn img {
+        margin-top: 6px;
+        margin-right: 5px;
+    }
+
+    .commonDetail .fr {
+        float: right;
+        font-size: 14px;
+    }
+
+    .commonDetail .tit {
+        width: 100%;
+        height: 36px;
+        line-height: 36px;
+
+    }
+
+    .commonDetail .bg {
+        background: rgba(240, 248, 255, 1);
+        color: #333;
+    }
+
+    .commonDetail .pl10 {
+        padding: 0 10px;
+    }
+
+    .commonDetail .pr60 {
+        padding-right: 60px;
+        padding-left: 30px;
+    }
+
+    .commonDetail .borderRed {
+        border: 1px solid red
+    }
+
+    .commonDetail .boderleft {
+
+        border-right: 1px dashed #ccc;
+    }
+
+    .commonDetail .layui-input {
+        height: 40px;
+        margin-top: 0;
+    }
+
+    .commonDetail .redStar {
+        position: absolute;
+        right: -20px;
+        top: 12px;
+    }
+
+    /* 按钮隐藏 */
+    .commonDetail .btn-status {
+        display: none;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+
+    .commonDetail .examine-textarea-style {
+        position: relative;
+    }
+
+    .commonDetail .examine-textarea-return {
+        position: absolute;
+        bottom: 2px;
+        left: 12px;
+        right: 12px;
+        background: #fff;
+        line-height: 35px;
+        text-align: right;
+    }
+
+    .commonDetail .examine-textarea-return-people {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .commonDetail .examine-textarea-return-date {
+        display: inline-block;
+    }
+
+    .commonDetail .examine-style {
+        margin-bottom: 15px;
+    }
+
+    .commonDetail .examine-height-style {
+        height: 120px;
+        padding-bottom: 40px;
+    }
+
+    .commonDetail .yijianRight {
+        font-size: 14px;
+        height: 650px;
+        margin-bottom: 0;
+        overflow-y: auto;
+        background: none;
+        padding-right: 15px;
+    }
+
+
+    .commonDetail .uploadA div:first-child {
+        width: 95% !important;
+    }
+
+    .commonDetail .larry-showpwd {
+        position: absolute;
+        top: 4px;
+        right: 28px;
+        display: none
+    }
+</style>

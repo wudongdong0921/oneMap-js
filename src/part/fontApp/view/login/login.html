@@ -1,0 +1,256 @@
+<style>
+    .login {
+        background-color: #014886;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+
+    /* .login .logo-title { margin: 10px 0 0 10px;}
+    .login .logo-title img { float: left;}
+    .login .logo-title .logo-title-text { float: left; padding: 10px 0 10px 20px;}
+    .login .logo-title .title { color: #fff; font-size: 25px;line-height: 40px; }
+    .login .logo-title .sub-title { color: #fff; font-size: 16px;line-height: 40px;} */
+
+    .login .login-box {
+        position: absolute;
+        background: #fff;
+        background-position: center center;
+        border-radius: 5px;
+        width: 800px;
+        height: 400px;
+        left: 50%;
+        top: 50%;
+        margin: -200px 0 0 -400px;
+    }
+
+    .login .login-box .title {
+        height: 60px;
+        margin: 0 0 10px 70px;
+        color: #5496e0;
+        width: 100%;
+        line-height: 60px;
+        font-size: 30px;
+        font-family: Helvetica Neue, Helvetica, PingFang SC, Tahoma, Arial, sans-serif;
+        margin-top: 40px;
+    }
+
+    .login .login-box .login-form {
+        width: 360px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background: none;
+        height: 54px;
+        margin: 0 0 20px 60px;
+        position: relative;
+    }
+
+    .login-box .icon {
+        position: absolute;
+        width: 54px;
+        height: 54px;
+        top: 0;
+        right: 0;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    .login-box .icon.user {
+        background-image: url(static/icon/user.png);
+    }
+
+    .login-box .icon.password {
+        background-image: url(static/icon/password.png);
+    }
+
+    .login-box .icon.captcha {
+        background-image: url(static/icon/captcha.png);
+    }
+
+    .login-box .login-form-box {
+        position: absolute;
+        width: 500px;
+        right: 0;
+        height: 100%;
+    }
+
+    .login-box .input-box {
+        position: absolute;
+        height: 54px;
+        left: 10px;
+        top: 0px;
+        right: 54px;
+    }
+
+    .login-box .input-box input {
+        width: 100%;
+        height: 100%;
+        border: none;
+        padding: 0;
+        background: none;
+        margin: 0;
+        font-size: 22px;
+    }
+
+    .login #footer {
+        height: 80px;
+        width: 100%;
+        position: absolute;
+        bottom: 0px;
+    }
+
+    .login #footer p {
+        width: 100%;
+        text-align: center;
+        line-height: 30px;
+        font-size: 15px;
+        color: #fff;
+    }
+
+    .login #footer .ml30 {
+        margin-left: 30px;
+    }
+
+    .login-box .forget {
+        width: 300px;
+        margin: 0 0 25px 75px;
+    }
+
+    .login-box .btn {
+        width: 370px;
+        height: 52px;
+        margin: 0 0 0 55px;
+        text-align: center;
+    }
+
+    .login-box .btn button {
+        border-radius: 5px;
+        box-shadow: 0 0 10px #cde0f6;
+        width: 360px;
+        height: 52px;
+        text-align: center;
+        background: #5496e0;
+        font-size: 18px;
+        color: #fff;
+        cursor: pointer;
+        border: none;
+    }
+
+    .login-box .btn button:hover {
+        background: #4e8acf;
+    }
+
+    .login-box .layui-form-checked[lay-skin=primary] i {
+        border-color: #4e8acf !important;
+        background-color: #4e8acf;
+    }
+
+    .login-box .login-form-captcha {
+        width: 360px;
+        margin: 0 0 20px 60px;
+        position: relative;
+    }
+
+    .login-box .login-form-captcha .login-form {
+        width: 175px;
+        margin: 0 0 0 -1px;
+        position: relative;
+        top: -1px;
+    }
+
+    .login-box input#captcha {
+        font-size: 18px;
+    }
+
+    .login-box .captcha-box {
+        width: 170px;
+        height: 54px;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .login-box .captcha-img {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+    }
+
+    .login-box input {
+        outline: none;
+    }
+
+    .logo-title-icon {
+        position: absolute;
+        width: 260px;
+        height: 200px;
+        top: 50%;
+        margin: -100px 0 0 0;
+        right: 0;
+    }
+
+    .login-image {
+        position: absolute;
+        width: 300px;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 5px 0 0 5px;
+    }
+
+    .login-image img {
+        width: 100%;
+    }
+
+    .login-title-text {
+        position: absolute;
+        width: 1100px;
+        height: 83px;
+        top: -160px;
+        left: 50%;
+        margin: 0 0 0 -550px;
+    }
+
+    .login-title-text img {
+        display: block;
+        margin: 0 auto;
+    }
+</style>
+
+<div class="login">
+    <input type="text" name="fakeusernameremembered" style="display: none;" placeholder="请输入用户名">
+    <input type="password" name="fakepasswordremembered" style="display: none;" placeholder="请输入密码">
+    <input type="text" name="captcha" style="display: none;" placeholder="请输入验证码">
+    <div class="login-box">
+        <div class="login-title-text">
+            <img src="../../../../../public/static/img/login-title-text.png" alt="">
+        </div>
+
+        <div class="login-image">
+            <img src="../../../../../public/static/img/main-left.png" alt="">
+        </div>
+        <div class="login-form-box">
+            <div class="title">登录</div>
+            <div class="login-form" id="userNameBox">
+                <div class="icon user"></div>
+                <div class="input-box">
+                    <input type="text" autocomplete="off" name="fakeusernameremembered" placeholder="请输入用户名"
+                        id="username">
+                </div>
+            </div>
+            <div class="login-form">
+                <div class="icon password"></div>
+                <div class="input-box">
+                    <input type="password" autocomplete="off" name="fakepasswordremembered" placeholder="请输入密码"
+                        id="password">
+                </div>
+            </div>
+            <div class="forget"></div>
+            <div class="btn">
+                <button id="login">登&nbsp;&nbsp;&nbsp;录</button>
+            </div>
+        </div>
+    </div>
+</div>

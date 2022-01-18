@@ -1,0 +1,22 @@
+.form_calendar {position: absolute; top: 5px; left: 5px; right: 5px; bottom: 5px; overflow: hidden;}
+.form_calendar .form_calendar_conteoller {position: absolute; top: 0px; left: 0px; height: 24px; line-height: 24px; right: 0px;}
+.form_calendar .form_calendar_select { position: absolute; top: 0px; left: 0px; width: 92px; height: 22px; line-height: 22px; font-size: 12px; color: #666; cursor: pointer; border: 1px solid #fff; }
+.form_calendar .form_calendar_selectName { position: absolute; left: 3px; }
+.form_calendar .form_calendar_selectIcon { position: absolute; top: 0px; right: 0px; width: 22px; height: 22px;}
+.form_calendar .form_calendar_buttons { height: 24px; width: 75px; position: absolute; top: 0px; right: 0px; }
+.form_calendar .form_calendar_button { width: 22px; color: #999; height: 22px; position: absolute; top: 0px; border: 1px solid #ccc; cursor: pointer; text-align: center; font-size: 20px; text-align: center; }
+.form_calendar .form_calendar_today { left: 25px;font-size: 12px; line-height: 20px;}
+.form_calendar .form_calendar_next { left: 50px; }
+.form_calendar .form_calendar_yearlist,.form_calendar .form_calendar_dayslist { top: 30px; position: absolute; left: 0px; right: 0px;bottom :0px; display: block; } 
+.form_calendar .form_calendar_daysTitle {height: 26px; line-height: 26px; font-size: 12px; color: #666; border-bottom: 1px solid #ccc; background: #eaeaea;}
+.form_calendar .form_calendar_weeks { width: 34px; float: left; text-align: center; }
+.form_calendar .form_calendar_daysBody { height:205px; background: #eee;}
+.form_calendar .form_calendar_day { height: 34px; width: 34px; float: left; color: #666; font-size: 12px; text-align: center; border-radius: 3px; cursor: pointer; } 
+.form_calendar .form_calender_day_content {height:20px;width: 20px;border-radius: 100%;line-height: 20px;margin: auto;margin-top: 7px;}
+.form_calendar .form_calender_day_content.today {color: #fff;background: #c5c5c5;border-radius: 100%;}
+.form_calendar .form_calender_day_content.active {background:#1e90ff; color: #fff;border-radius: 100%;}
+.form_calendar .form_calender_day_content.empty {border-color: #fff; color: #fff; cursor:initial}
+.form_calendar .form_calender_day_content.unactive {color: #aaa!important; cursor: inherit}
+.form_calendar .form_calendar_yearlist { display: none; overflow-y: auto; }
+.form_calendar .form_calendar_yearItem { height: 22px; border: 1px solid #ccc; border-width: 1px 0; margin: -1px 0; background: #eaeaea; color: #666; font-size: 12px; padding-left: 10px; line-height: 22px; cursor: pointer; }
+.form_calendar .form_calendar_monthItem { height: 30px; line-height: 30px; font-size: 13px; text-align: center; width: 25%; float: left; color: #666; width: 54px; border: 1px solid #ccc; border-width: 1px 1px 0 1px; margin: 0 0 -1px -1px; cursor: pointer; }

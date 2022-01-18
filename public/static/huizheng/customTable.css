@@ -1,0 +1,13 @@
+.subtable.row-layout-subtable > thead > tr > th:last-child { 
+    min-width: 30px;
+    max-width: 120px;
+    width: 30px;
+}
+
+.subtable > thead > tr > th {
+    min-width: 50px;
+}
+.subtable > tbody > tr > td {
+    min-width: 50px;
+}
+

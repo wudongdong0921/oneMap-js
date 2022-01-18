@@ -1,0 +1,40 @@
+/***********************************************
+* tree组件样式
+* 李雪
+* 2020-10-14 15:59:40
+***********************************************/
+.treebox .item{
+    color:#333;
+    font-size: 14px;
+    width: 100%;
+}
+.treebox .item i{
+    cursor: pointer;
+}
+.treebox .childNode{
+    display:flex;
+    justify-content: space-between;
+    line-height:30px;
+    margin-left: 25px;
+}
+.treebox .childNode i{ 
+    font-size: 20px;
+    color:#999;
+    cursor: pointer;
+    margin-left: 8px;
+}
+.treebox .childNode img{
+    width: 20px;
+    cursor: pointer;
+}
+.treebox .childNode .name{ 
+    display: inline-block;
+    width: 70%; 
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis; 
+}
+.treebox .childNode .fa-times-circle.active{
+    color: #ea4235;
+}
+.treebox .childNode .fa-check-circle.active{
+    color: #7dd180;
+}

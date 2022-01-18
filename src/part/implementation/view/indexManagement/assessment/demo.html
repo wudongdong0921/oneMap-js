@@ -1,0 +1,73 @@
+<link href="../../../../static/libs/zTree/zTreeStyle/zTreeStyle.css" rel="stylesheet">
+<div class="container">
+    <div class="search-bar">
+        <input id="keyword" type="text" placeholder="请输入...">
+        <button id="search">搜索</button>
+    </div>
+    <div class="content">
+        <!-- 用于显示ztree的html元素的class一定要设置为ztree-->
+        <ul id="ztreeObj" class="ztree"></ul>
+    </div>
+</div>
+<script src="../../../../static/libs/jquery/jquery.js"></script>
+<script src="../../../../static/libs/zTree/jquery.ztree.core.js"></script>
+<script src="../../../../static/libs/zTree/jquery.ztree.exhide.min.js"></script>
+<script type="text/javascript">
+ /**
+     * 查找子结点，如果找到，返回true，否则返回false
+     */
+     function searchChildren(keyword,children){
+        if(children == null || children.length == 0){
+            return false;
+        }
+        for(var i = 0;i < children.length;i++){
+            var node = children[i];
+            if(node.name.indexOf(keyword)!=-1){
+                return true;
+            }
+            //递归查找子结点
+            var result = searchChildren(keyword,node.children);
+            if(result){
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    /**
+     * 查找当前结点和父结点，如果找到，返回ture，否则返回false
+     */
+    function searchParent(keyword,node){
+        if(node == null){
+            return false;
+        }
+        if(node.name.indexOf(keyword)!=-1){
+            return true;
+        }
+        //递归查找父结点
+        return searchParent(keyword,node.getParentNode());
+    }
+    
+    var hiddenNodes = [];
+    $('#search').click(function(){
+        var ztreeObj = $.fn.zTree.getZTreeObj("ztreeObj");
+        //显示上次搜索后隐藏的结点
+        ztreeObj.showNodes(hiddenNodes);
+        //查找不符合条件的结点
+        //返回true表示要过滤，需要隐藏，返回false表示不需要过滤，不需要隐藏
+        function filterFunc(node){
+            var keyword=$("#keyword").val();
+        //如果当前结点，或者其父结点可以找到，或者当前结点的子结点可以找到，则该结点不隐藏
+            if(searchParent(keyword,node) || searchChildren(keyword,node.children)){
+                return false;
+            }
+            return true;
+        };
+
+        //获取不符合条件的叶子结点
+        hiddenNodes=ztreeObj.getNodesByFilter(filterFunc);
+
+        //隐藏不符合条件的叶子结点
+        ztreeObj.hideNodes(hiddenNodes);
+    });
+</script>

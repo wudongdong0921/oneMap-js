@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>添加</title>
+        <style type="text/css">
+       .blockInformationAdd *{margin:0; padding:0; list-style:none; font-size: 14px; }
+       .blockInformationAdd .ys-tab{width:550px; margin:3% auto; text-align:center;  }
+       .blockInformationAdd .ys-tab tr td{line-height:15px; height:57px;  margin-right: 10px;}
+       .blockInformationAdd .ys-tab tr td:nth-child(odd){width:80px; font-weight: bold; padding: 5px; }
+       .blockInformationAdd .ys-text{width:100%; height:27px; border:none; padding:0;}
+       .blockInformationAdd .cor-red{color:red;}
+       .blockInformationAdd .text-center{text-align:center;}
+       .blockInformationAdd .text-right{text-align:right;}
+       .blockInformationAdd .bgnone{background:none!important;}
+       .blockInformationAdd .layui-input{ margin-left: 3px; padding: 0px 0 0 5px;}
+       .blockInformationAdd .align{text-align-last: justify;}
+    </style>
+    </head>
+
+    <body class="">
+        <form class="layui-form blockInformationAdd" action="">
+            <table class="ys-tab" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="background align">图幅号<span class="cor-red">*</span></td>
+                    <td><input type="text" class="layui-input" id="tfh" maxlength="100" lay-verify="required"></td>
+                    <td class="background align">地块编号<span class="cor-red">*</span></td>
+                    <td><input type="text" class="layui-input" id="dkbh" maxlength="100" lay-verify="required"></td>
+                </tr>
+                <tr>
+                    <td class="background align">地块名称<span class="cor-red">*</span></td>
+                    <td><input type="text" class="layui-input" id="dkmc" maxlength="25" lay-verify="required"></td>
+                    <td class="background align">地块用途<span class="cor-red">*</span></td>
+                    <td>
+                        <select name="modules" lay-search="" id="dkyt" lay-filter="dkyt" lay-verify="required">
+                        </select>
+                    </td>
+                </tr>
+                <!-- <tr>
+            <td class="background align">地块子用途<span class="cor-red">*</span></td>
+            <td colspan="3">
+                <form class="layui-form" action="">
+                    <select name="modules"  lay-search="" id="dkzyt" lay-verify="required">
+                    </select>
+                </form>
+            </td>
+        </tr> -->
+                <tr>
+                    <td class="background align">界址点数<span class="cor-red">*</span></td>
+                    <td><input type="text" class="layui-input" id="jzds" maxlength="25" lay-verify="required|number"></td>
+                    <td class="background align">地块面积（公顷）<span class="cor-red">*</span></td>
+                    <td><input type="number" class="layui-input" id="dkmj" maxlength="25" lay-verify="required"></td>
+                </tr>
+                <tr>
+                    <td class="background align">图形类型<span class="cor-red">*</span></td>
+                    <td>
+                        <select name="modules" lay-search="" id="txlx" lay-verify="required">
+                        </select>
+                    </td>
+                    <td class="background align">坐标系<span class="cor-red">*</span></td>
+                    <td><input type="text" class="layui-input" id="zbx" maxlength="25" lay-verify="required"></td>
+                </tr>
+                <!-- <tr>
+            <td class="background align">所在行政区<span class="cor-red">*</span></td>
+            <td><input type="text"  class="layui-input"id="xzqmc"maxlength="25"lay-verify="required"></td>
+            <td class="background align">行政区代码<span class="cor-red">*</span></td>
+            <td><input type="text"  class="layui-input" id="xzqdm" maxlength="25"lay-verify="required"></td>
+        </tr> -->
+            </table>
+            <div class="text-center" style="margin-bottom:40px;">
+                <input type="text" style="display: none" id="dkxxid">
+                <button class="layui-btn layui-btn-sm layui-btn-normal" id="dkxxsave" style="margin-top:5px;width: 90px;" lay-filter="dkxxsave" lay-submit>
+                    保 存
+                </button>
+            </div>
+        </form>
+    </body>
+
+</html>

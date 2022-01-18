@@ -1,0 +1,270 @@
+<!----------------------------------------
+* 规划成果管理-成果总览
+* 杨爽
+* 2020-10-13 11:27:50
+------------------------------------------->
+
+<style>
+  .map_content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+
+  .map_content .mapBox {
+    position: absolute;
+    top: 98px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .map_content .mapBox ul {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    z-index: 999
+  }
+
+  .map_content .mapBox ul li {
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+    font-size: 12px;
+  }
+
+  .map_content .mapBox ul li div {
+    display: inline-block;
+    width: 20px;
+    height: 15px;
+    margin-right: 5px;
+  }
+
+  .map_content .white1 {
+    background: #fff;
+  }
+
+  .map_content #administrativeDivision .form_select_nameBox {
+    background: #ffffff;
+  }
+
+  .map_content .table_content {
+    top: 445px;
+    position: absolute;
+    background-color: white;
+    bottom: 5px;
+    width: 100%;
+  }
+
+  /* .map_content  .province_tab .item_content .item_color_one {
+      background-color: #2b5394;
+    }
+    .map_content  .province_tab .item_content .item_color_two {
+      background-color: #2e7de7;
+    }
+    .map_content .province_tab .item_content .item_color_three {
+      background-color: #5c98e7;
+    }
+    .map_content .province_tab .item_content .item_color_four {
+      background-color: #8bb2e7;
+    }
+    .map_content .province_tab .item_content .item_color_five {
+      background-color: #aaaaaa;
+    }
+    .map_content .province_tab .item_content .item_color_six {
+      background-color:  #2e7de7;
+    } */
+  /*  .province_tab .item_content{
+          display: inline-block;
+          width: 506px;
+          height: 342px;
+          padding-top: 20px;
+      } */
+  .map_content .province_tab .item_content .item_one {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    width: 80%;
+    padding: 22px 0;
+  }
+
+  .map_content .province_tab .item_content .item_two {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    width: 90%;
+    height: 65px;
+    font-size: 14px;
+    line-height: 33px;
+  }
+
+  .map_content .chart_info::after {
+    content: "";
+    display: block;
+    border-bottom: 1px solid #5294d7;
+    border-bottom-width: 10px;
+    margin: 0px 50px;
+  }
+
+  .map_content .chart_title {
+    position: absolute;
+    top: 185px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  /* 区域tab签css */
+  .map_content .province_tab {
+    background-color: white;
+    height: 400px;
+    padding: 15px;
+  }
+
+  .map_content .province_tab .tab_title {
+    height: 50px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .map_content .province_tab .tab_title .item {
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+    margin: 0 20px;
+    font-size: 18px;
+    color: #000;
+    line-height: 1;
+    transition: 0.2s all linear;
+    cursor: pointer;
+    line-height: 50px;
+    text-align: center;
+  }
+
+  .map_content .province_tab .tab_title .active::after {
+    content: "";
+    display: block;
+    border-bottom: 1px solid #5294d7;
+    border-bottom-width: 5px;
+    margin: 0 -10px;
+  }
+
+  .map_content .map {
+    background-color: white;
+    display: inline-block;
+    width: 50%;
+    height: 800px;
+  }
+
+  .map_content .chart {
+    flex: 1;
+    background-color: white;
+    height: 900px;
+  }
+
+  .map_content .chart_right_content {
+    display: inline-block;
+    width: 50%;
+  }
+
+  .map_content .search_map_conternt {
+    margin-top: 20px;
+  }
+
+  .map_content #searchMapConternt .lable_title {
+    width: 100px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+  }
+
+  .map_content .chartView .title {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 26px;
+  }
+
+  .map_content .echartBox {
+    display: flex;
+  }
+
+  .map_content .popupLayers {
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .map_content .popupLayers .mapboxgl-popup-content {
+    pointer-events: none;
+    user-select: none;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .map_content .popupLayers .mapboxgl-popup-tip {
+    display: none;
+  }
+
+  .map_content .mapPopup_mapMessage {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    color: #fff;
+  }
+
+  .map_content .mapPopup_mapMessage_title {
+    font-size: 18px;
+    margin-bottom: 2px;
+  }
+  .map_content .form-control {
+    background-color: #fff;
+  }
+</style>
+
+
+<div class="map_content" style=" background-color: #f2f2f2;" id="scheduleM">
+  <div style="height:100%">
+    <div class="layui-row layui-col-space10" style="height:100%">
+      <div class="layui-col-md7" style="height:100%">
+        <div class="grid-demo grid-demo-bg1 white1">
+          <div class="layui-row" style=" padding: 15px;">
+            <div class="layui-col-md6">
+              <div class="layui-form-item">
+                <label class="layui-form-label" style="width : 100px">规划成果类型:</label>
+                <div class="layui-input-block" id="planningResult" style="margin-left: 130px;"></div>
+              </div>
+            </div>
+            <div class="layui-col-md6">
+              <div class="layui-form-item">
+                <label class="layui-form-label">行政区划:</label>
+                <div class="layui-input-block" id="area"></div>
+              </div>
+            </div>
+          </div>
+          <div class="mapBox">
+            <ul>
+              <li>
+                <div style="background:#e9e9e9"></div>未汇交
+              </li>
+              <li>
+                <div style="background:#77abee"></div>已汇交
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="layui-col-md5" style="height:100%">
+        <div class="grid-demo grid-demo-bg1">
+          <div id="chartTabContentInfo"></div>
+          <div class="table_content">
+            <div id="tableList" style="padding:10px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

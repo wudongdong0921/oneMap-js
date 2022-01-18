@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>添加</title>
+        <style type="text/css">
+        *{margin:0; padding:0; list-style:none; font-size:14px;}
+        .ys-tab tr td:nth-child(odd){width:80px; font-weight: bold;  }
+        .ys-text{width:100%; height:27px; border:none;padding:0;}
+
+        .text-center{text-align:center;}
+        .text-right{text-align:right;}
+        .bgnone{background:none!important;}
+        .layui-input{ margin-left: 3px; padding:0px 0px 0px 5px;}
+        .align{text-align-last: justify;} 
+        .layui-card-header{margin: 0 0;}
+    </style>
+    </head>
+
+    <body>
+        <div class="land">
+            <div class="layui-card-header">
+                <div class="layui-form layuiadmin-card-header-auto">
+                    <div class="layui-form-item">
+                        <div class="layui-inline" style="margin-left: 19px;">
+                            <label style="width: 130px;" class="layui-form-label">测绘编号或项目编号</label>
+                            <div class="layui-input-inline size2">
+                                <input type="text" id="drawNo" name="title" placeholder="请输入" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <!-- <div class="layui-inline">
+                            <label class="layui-form-label">项目编号</label>
+                            <div class="layui-input-block">
+                                <input type="text" id="projectNo" name="title" placeholder="请输入" autocomplete="off" class="layui-input">
+                            </div>
+                        </div> -->
+                        <div class="layui-inline" style="float: right;margin-right: 93px;">
+                            <button class="layui-btn layui-btn-sm layui-search" id="searchButton" lay-submit lay-filter="LAY-search" data-type="all">查询
+                            </button>
+                            <button class="layui-btn layui-btn-sm layui-reset" id="resetButton" lay-submit lay-filter="LAY-search-reload" data-type="all">重置
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form layuiadmin-card-header-auto">
+                <div class="layui-form-item" style="margin-top: 20px">
+                    <div class="" style="width: 100%;display:flex;justify-content: space-between">
+                        <div class="layui-inline" style="width:50%;margin-top: 10px">
+                            <label class="layui-form-label">工程名称</label>
+                            <div class="layui-input-inline size2">
+                                <input type="text" id="projectname" name="title" placeholder="请输入" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="" style="width:50%;margin-top: 10px">
+                            <label class="layui-form-label">工程编号</label>
+                            <div class="layui-input-inline size2">
+                                <input type="text" id="projectno" name="title" placeholder="请输入" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="" style="width: 100%;display:flex;justify-content: space-between">
+                        <div class="layui-inline" style="width: 50%;margin-top: 10px">
+                            <label class="layui-form-label">测绘类型</label>
+                            <div class="layui-input-inline size2">
+                                <input type="text" id="casetypename" name="title" placeholder="请输入" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="" style="width: 50%;margin-top: 10px">
+                            <label class="layui-form-label">行政区划</label>
+                            <div class="layui-input-inline size2">
+                                <input type="text" id="xzqhname" name="title" placeholder="请输入" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="" style="width: 100%;display:flex;justify-content: space-between">
+                        <div class="layui-inline" style="width: 50%;margin-top: 10px">
+                            <label class="layui-form-label">申请人</label>
+                            <div class="layui-input-inline size2">
+                                <input type="text" id="sender" name="title" placeholder="请输入" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="" style="width: 50%;margin-top: 10px">
+                            <label class="layui-form-label">申请时间</label>
+                            <div class="layui-input-inline size2">
+                                <input type="text" style="display: inline; " name="draftTime" class="layui-input" id="createon" placeholder="请选择">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tr h300">
+                <div class="h300" style="width:84.5%; margin-left: 5%;">
+                    <table class="layui-hide" id="ch" lay-filter="ch"></table>
+                </div>
+            </div>
+            <div class="text-center" style="margin-bottom:40px;">
+               <!-- <button class="layui-btn layui-btn-sm layui-btn-ys ml5 right" id="DownLoadFile" type="button">
+                    <i class="larry-icon larry-dingdanliebiao"><img class="cloud-icon cloud-icon-down"></i>
+                    下载
+                </button>-->
+                <button class="layui-btn layui-btn-sm layui-btn-ys ml5 right" id="uploadFile" type="button">
+                    <i class="larry-icon larry-dingdanliebiao"><img class="cloud-icon cloud-icon-upload-file"></i>
+                    导入
+                </button>
+            </div>
+        </div>
+    </body>
+
+</html>

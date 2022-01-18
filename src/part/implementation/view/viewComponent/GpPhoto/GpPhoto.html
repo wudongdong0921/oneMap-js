@@ -1,0 +1,39 @@
+
+
+<style>
+    .GpPhoto { width: 98%;  height: 700px; position: relative;top: 15px;}
+    .GpPhoto .perview { position: absolute; left: 0px; top: 0; width: 640px; height: 480px; }
+    .GpPhoto .output { position: absolute; right: 0px; top: 0; width: 360px; height: 270px; }
+    .GpPhoto img { display: block; width: 100%; height: 100%;}
+
+    .GpPhoto .buttons { width: 100%; height: 100px; position: absolute; top: 490px; text-align: center;}
+    .GpPhoto .buttons div { display: inline-block; padding:10px 20px; background: #ccc; }
+    .GpPhoto #container{overflow-y: auto;
+    position: absolute;
+    top: 0px;
+    left: 645px;
+    right: 0;
+    bottom: 220px;}
+</style>
+<div class="GpPhoto">
+    <div class="perview">
+        <img id="bigPriDev" src="" />
+    </div>
+    <div class="output" style="display: none;">
+        <img id="devPhoto"/>
+    </div>
+
+    <div class="buttons">
+        <!-- <div id="output">拍照</div>
+        <div id="upload">上传</div> -->
+        设备列表：<select id="devList" style="width: 120px" ></select> 
+        <select id="modelList" style="width: 120px" ></select>
+        <select id="resolutionList" style="width: 120px" ></select> 
+        <input id="output" type="button" value="拍照"  />
+        <input id="upload" type="button" value="上传">
+        <input id="composePDF" type="button" value="合成PDF" />
+        <input id="deleteFile" type="button" value="删除文件" />
+    </div>
+    <br/>
+    <div id="container" style="float:left;"> </div>	
+</div>

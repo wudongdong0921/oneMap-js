@@ -1,0 +1,85 @@
+<style>
+    .index .animation_div:hover .img{
+        transition:all 0s .2s;
+        animation: myfirst 1s 0s ease both;
+        -moz-animation: myfirst 1s 0s ease both;
+        -webkit-animation: myfirst 1s 0s ease both;
+        -o-animation: myfirst 1s 0s ease both;
+    }
+    @keyframes myfirst {
+        0% {opacity: .5;transform: scale(.5);transition-timing-function:ease-in;	}
+        80% {opacity: .8;transition-timing-function:ease-in;transform: scale(1.1);	}
+        100% {opacity: 1;transition-timing-function:ease-in;transform: scale(1);	}
+    }
+
+    @-moz-keyframes myfirst{	
+        0% {opacity: .5;transition-timing-function:ease-in;transform: scale(.5);	}
+        80% {opacity: .8;transition-timing-function:ease-in;transform: scale(1.1);	}
+        100% {opacity: 1;transition-timing-function:ease-in;transform: scale(1);	}
+    }
+
+    @-webkit-keyframes myfirst{	
+        0% {opacity: .5;transition-timing-function:ease-in;transform: scale(.5);	}
+        80% {opacity: .8;transition-timing-function:ease-in;transform: scale(1.1);	}
+        100% {opacity: 1;transition-timing-function:ease-in;transform: scale(1);	}
+    }
+
+    @-o-keyframes myfirst {
+        0% {opacity: .5;transition-timing-function:ease-in;transform: scale(.5);	}
+        80% {opacity: .8;transition-timing-function:ease-in;transform: scale(1.1);	}
+        100% {opacity: 1;transition-timing-function:ease-in;transform: scale(1);	}
+    }
+
+    .index div { background-repeat: no-repeat;}
+    .index#BG { position: absolute; top: 0; left: 0; bottom: 0; right: 0;}
+    .index #title { width: 438px; height: 80px; position: absolute; top: 50%; left: 50%; margin: -400px 0 0 -219px; background-size: 100%; background-position: center center; }
+    .index #subTitle { width: 1000px; height: 80px; position: absolute; top: 50%; left: 50%; margin: -300px 0 0 -500px; background-size: 100%; background-position: center center;  }
+    .index .box { width: 1140px;  height: 428px;  position: absolute;top: 50%; left: 50%;  margin: -210px 0 0 -570px;  overflow: hidden;}
+
+    .index #left_0 { width: 205px; height: 100%; position: absolute; }
+    .index #middle_1_top { width: 271px; height: 236px; position: absolute; left: 205px; }
+    .index #middle_2_top { width: 175px; height: 236px; position: absolute; left: 476px; }
+    .index #middle_3_top { width: 271px; height: 236px; position: absolute; left: 651px; }
+    .index #middle_1_bottom { width: 271px; height: 191px; position: absolute; top: 236px; left: 205px; }
+    .index #middle_2_bottom { width: 446px; height: 191px; position: absolute; top: 236px;left: 476px;  }
+    .index #right_1 { width: 190px; height: 236px; position: absolute; top:0px; left: 922px; }
+    .index #right_2 { width: 190px; height: 191px; position: absolute;top: 236px; left: 922px; }
+    .index .img { width: 100%; height: 100%;}
+
+
+</style>
+
+
+<div class="index" id="BG">
+    <div id="title"></div>
+    <div id="subTitle"></div>
+    <div class="box">
+        <div id="left_0" class="animation_div">
+            <div class="img"></div>
+        </div>
+
+        <div id="middle_1_top" class="animation_div">
+            <div class="img"></div>
+        </div>
+        <div id="middle_2_top" class="animation_div">
+            <div class="img"></div>
+        </div>
+        <div id="middle_3_top" class="animation_div">
+            <div class="img"></div>
+        </div>
+        
+        <div id="middle_1_bottom" class="animation_div">
+            <div class="img"></div>
+        </div>
+        <div id="middle_2_bottom" class="animation_div">
+            <div class="img"></div>
+        </div>
+
+        <div id="right_1" class="animation_div">
+            <div class="img"></div>
+        </div>
+        <div id="right_2" class="animation_div">
+            <div class="img"></div>
+        </div>
+    </div>
+</div>

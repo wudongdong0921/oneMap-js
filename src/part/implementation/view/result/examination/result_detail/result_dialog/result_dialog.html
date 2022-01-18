@@ -1,0 +1,44 @@
+<!----------------------------------------
+* 成果审查弹出框
+* 李雪
+* 2020-10-15 11:09:16
+* 戴飞
+* 2020-11-5 13:02:12
+------------------------------------------->
+
+<div id="examineDailog">
+  <div class="exa-box">
+    <div class="layui-tab">
+      <ul class="layui-tab-title">
+        <li class="layui-this">检查结果</li>
+        <li>检查日志</li>
+      </ul>
+      <div class="layui-tab-content">
+        <div class="layui-tab-item layui-show examineResult"></div>
+        <div class="layui-tab-item examineLog"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  #examineDailog {
+    padding: 25px 40px;
+  }
+  #examineDailog .inputbox {
+    display: flex;
+    align-items: center;
+  }
+  #examineDailog .inputbox label {
+    width: 120px;
+  }
+  #examineDailog .tabbox {
+    margin-top: 35px;
+  }
+  #examineDailog .btnbox {
+    text-align: center;
+    width: 92%;
+  }
+  #examineDailog .examineLog div {
+    line-height: 30px;
+  }
+</style>

@@ -1,0 +1,139 @@
+<!----------------------------------------
+* 进度管理
+* 李雪
+* 2020-10-26 09:19:12
+------------------------------------------->
+
+<div id="scheduleM"></div>
+
+<style>
+  .map_content {
+    display: flex;
+  }
+  .map_content .map {
+    flex: 1;
+    /* background-color: red; */
+    height: 600px;
+  }
+  .map_content .chart {
+    flex: 1;
+    /* background-color: blue; */
+    height: 600px;
+  }
+  #scheduleM .mapBox {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    right: 0;
+    height: 577px;
+  }
+  #scheduleM .mapBox ul{ 
+    position: absolute;
+    right: 7px;
+    bottom: 5px;
+    z-index:999
+  }
+  #scheduleM .mapBox ul li{
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+    font-size: 12px;
+  }
+  #scheduleM .mapBox ul li div{
+    display: inline-block;
+    width: 20px;
+    height: 15px;
+    margin-right: 5px;
+  }
+  .schedule {
+    display: flex;
+    width: 77%;
+  }
+  .schedule .active {
+    width: 25px;
+    height: 25px;
+    background-color: #5294d7;
+    border: 1px solid #d7d7d7;
+    margin-left: 1px;
+  }
+  .schedule .unactive {
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    border: 1px solid #d7d7d7;
+    margin-left: 3px;
+  }
+  .search_map_conternt {
+    margin-top: 20px;
+  }
+  #searchMapConternt .lable_title {
+    width: 100px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+  }
+  .chartView .title {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 26px;
+  }
+  #scheduleM {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #f5f5f5;
+    padding-right: 10px;
+  }
+  #scheduleM .grid-demo {
+    background: #fff;
+    padding: 15px;
+  }
+  #scheduleM .chartblock {
+    text-align: center;
+  }
+  #scheduleM .popupLayers {
+    pointer-events: none;
+    user-select: none;
+  }
+  #scheduleM .popupLayers .mapboxgl-popup-content {
+    pointer-events: none;
+    user-select: none;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  #scheduleM .popupLayers .mapboxgl-popup-tip {
+    display: none;
+  }
+  #scheduleM .mapPopup_mapMessage{
+    padding: 3px 10px;
+    background: #000 0.3;
+    border-radius: 3px;
+  }
+
+  #scheduleM .form-control {
+    background-color: #fff;
+  }
+
+  .FUI-table-layout .layui-form-item {
+    display: none;
+  }
+
+  #scheduleM .mapPopup_mapMessage {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    color: #fff;
+  }
+
+  #scheduleM .mapPopup_mapMessage_title {
+    font-size: 18px;
+    margin-bottom: 2px;
+  }
+
+  #scheduleM .mapPopup_mapMessage_item {
+    margin-top: 10px;
+  }
+</style>

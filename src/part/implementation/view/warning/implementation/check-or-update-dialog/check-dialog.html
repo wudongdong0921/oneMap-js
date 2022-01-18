@@ -1,0 +1,101 @@
+<style>
+  #dialog {
+    box-sizing: border-box;
+    position: relative;
+    padding: 30px;
+  }
+
+  #list {
+    width: 100%;
+  }
+
+  .m_flex_wrap {
+    display: flex;
+  }
+
+  .m_flex_con {
+    flex: 1;
+  }
+
+  .row {
+    height: 60px;
+    line-height: 60px;
+  }
+
+  .label {
+    padding: 0 15px;
+    min-width: 110px;
+    text-align: right;
+    box-sizing: border-box;
+  }
+
+  .value {
+    height: 40px;
+    line-height: 38px;
+    background: rgba(242, 242, 242, 1);
+    color: #7F7F7F;
+    font-size: 14px;
+    padding: 0 15px;
+    border: 1px solid rgba(215, 215, 215, 1);
+    border-radius: 2px;
+    box-sizing: border-box;
+    margin-top: 10px;
+  }
+
+  .ml_40 {
+    margin-left: 40px;
+  }
+
+  .remark_value {
+    height: 100px;
+    line-height: 38px;
+    background: rgba(242, 242, 242, 1);
+    color: #7F7F7F;
+    font-size: 14px;
+    padding: 0 15px;
+    border: 1px solid rgba(215, 215, 215, 1);
+    border-radius: 2px;
+    box-sizing: border-box;
+    margin-top: 10px;
+  }
+
+  #buttons {
+    position: absolute;
+    left: 43%;
+    margin-bottom: 20px;
+    margin-top: 40px;
+  }
+
+  .confirm {
+    margin: 0 20px;
+    background-color: #5294d7;
+    color: #FFF;
+  }
+</style>
+<div id="dialog">
+  <div class="row m_flex_wrap">
+    <div class="m_flex_con m_flex_wrap">
+      <div class="label">行政区划</div>
+      <div class="value m_flex_con" id="districtName"></div>
+    </div>
+    <div class="m_flex_con m_flex_wrap ml_40">
+      <div class="label">行政区代码</div>
+      <div class="value m_flex_con" id="districtCode"></div>
+    </div>
+  </div>
+  <div class="row m_flex_wrap">
+    <div class="m_flex_con m_flex_wrap">
+      <div class="label">评估年份</div>
+      <div class="value m_flex_con" id="assessYear"></div>
+    </div>
+    <div class="m_flex_con m_flex_wrap ml_40">
+      <div class="label">评估日期</div>
+      <div class="value m_flex_con" id="assessDate"></div>
+    </div>
+  </div>
+  <div id="uploadIdFile" style="margin-top: 10px;"></div>
+  <div class="m_flex_wrap">
+    <div class="label">备注</div>
+    <div class="m_flex_con" id="remark"></div>
+  </div>
+</div>

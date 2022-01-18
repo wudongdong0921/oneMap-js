@@ -1,0 +1,65 @@
+<!----------------------------------------
+* 指标管理 - 指标规划值
+* 杨爽
+* 2020-11-09 09:24:36
+------------------------------------------->
+
+<style>
+    .tree_box .layui-form-item{
+        margin-left:-110px;
+    }
+    .layout-template-view{
+        background:rgb(239,241,242);
+        padding:0!important;
+    }
+    .FUI-table-layout{
+        padding:15px 0 0 0!important;
+    }
+    .tree_box{
+        width:17%;
+        height:850px;
+        background:#fff;
+        margin-right:.5%;
+        float:left;
+        overflow-x:auto;
+        overflow-y: hidden;
+    }
+    .tree_box::-webkit-scrollbar {
+                display: none;
+    }
+
+    .ztree{
+        margin:0 40px 20px 20px;
+        overflow: auto;
+        height:750px;
+    }
+    .table_box{
+        width:82.5%;
+        height:850px;
+        background:#fff;
+        float:left;
+    }
+   
+    .ztree *{
+        font-size:16px;
+    }
+    #selectForm {
+        margin-top:15px;
+    }
+    #progressCollection .FD-UI-table-box .FD-UI-evenColor-row:nth-child(even) {
+        background: #f0f0f0;
+    }
+    .ztree li a.curSelectedNode {padding-top:0px; background-color:#999; color:#fff; height:16px; border:1px #999 solid; opacity:0.8;}
+</style>
+
+<div class="tree_box">
+    <div id="selectForm">
+        
+    </div>
+    <ul id="tree" class="ztree"></ul>
+</div>
+<div class="table_box">
+    <div id="progressCollection">
+    </div>
+</div>
+

@@ -1,0 +1,164 @@
+<!----------------------------------------
+* 规划实施评估
+* 吴野
+* 2020-12-11 17:55:32
+------------------------------------------->
+<!--
+    2021-05-10 陈薪名 修改bug HNXGTKJ-1643 新增style="width: 20%;" 
+-->
+<div class="layui-row layui-col-space10" style="height: 100%;">
+    <div class="layui-col-md3 padding_item" style="width: 20%;">
+        <div style='background:#fff;height: 100%;' id="selectTree"></div>
+    </div>
+    <div class="layui-col-md3 padding_item">
+        <div style='background:#fff;height: 100%;' class="selectLists" id="selectLists"></div>
+    </div>
+    <div class="layui-col-md6 padding_item ">
+        <div style='background:#fff;height: 100%;' id="mapView"></div>
+        <div class="labels  item-div">
+            <div class="flex_wrap">
+                <div class="label_color color_80_100"></div>
+                <div class="label_grade_scope">超标</div>
+            </div>
+            <div class="flex_wrap">
+                <div class="label_color color_60_80"></div>
+                <div class="label_grade_scope">预警</div>
+            </div>
+            <div class="flex_wrap">
+                <div class="label_color color_under_60"></div>
+                <div class="label_grade_scope">正常</div>
+            </div>
+            <div class="flex_wrap">
+                <div class="label_color color_under_50"></div>
+                <div class="label_grade_scope">未监测</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .labels {
+        position: absolute;
+        width: 150px;
+        height: 100px;
+        right: 20px;
+        bottom: 100px;
+    }
+
+    .flex_wrap {
+        display: flex;
+    }
+
+    .label_color {
+        width: 20px;
+        height: 15px;
+        border-radius: 4px;
+        margin-right: 20px;
+        margin-top: 3px;
+    }
+
+
+    .color_under_50 {
+        background: #CCC;
+    }
+
+    .color_under_60 {
+        background: #c2e5e5;
+    }
+
+    .color_60_80 {
+        background: #fcfcd4;
+    }
+
+    .color_80_100 {
+        background: #ff8848;
+    }
+
+    .padding_item {
+        height: 100%;
+    }
+
+    #layout-content {
+        background-color: #f4f4f4 !important;
+    }
+
+    .selectTree {
+        height: 100%;
+    }
+
+    .selectMore {
+        /* padding: 20px; */
+    }
+
+    #formSelect {
+        position: absolute;
+        margin-top: 16px;
+    }
+
+    .checkBtn {
+        float: right;
+        /* padding: 18px; */
+        padding-top: 16px;
+        padding-left: 27px;
+    }
+
+    .selectInptu {
+        padding: 10px;
+    }
+
+    .selectList {
+        padding: 10px;
+        height: 700px;
+        overflow-y: auto;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        height: 50px;
+        outline: 2px solid #fff;
+        outline-offset: -2px;
+        border: 2px solid #fff;
+        -webkit-border-radius: 6px;
+        background-color: #fff;
+        opacity: .5;
+    }
+
+
+    .divItem {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #1d488e;
+        margin-top: 5px;
+    }
+
+    .selectLists .active {
+        color: #fff;
+        background-color: #1d488e;
+    }
+
+    .chartView {
+        width: 81%;
+        height: 100%;
+    }
+    .form-control[readonly=readonly] {
+    background: #fff;
+}
+    #checkChartBtn{
+        margin-bottom: -20px;
+    }
+    .mapboxgl-popup-content {
+        padding: 0;
+        background: rgba(0, 0, 0, 0);
+        box-shadow: none;
+    }
+
+    .mapPopup_mapMessage {
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px;
+        color: #fff;
+        border-radius: 4px;
+        padding-bottom: 5px;
+    }
+    .mapboxgl-popup-tip{
+        display: none;
+    }
+</style>

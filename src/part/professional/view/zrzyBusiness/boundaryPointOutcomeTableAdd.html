@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拟建地列表 - 新增</title>
+    <style type="text/css">
+        .boundaryPointOutcomeTableAdd *{margin:0; padding:0; list-style:none; font-size:14px;}
+        .boundaryPointOutcomeTableAdd .ys-tab{width:450px; margin:3% auto;  text-align:center;  }
+        .boundaryPointOutcomeTableAdd .ys-tab tr td{line-height:15px; height:57px; text-align-last: justify; }
+        .boundaryPointOutcomeTableAdd .ys-tab tr td:nth-child(1){width:100px; font-weight: bold; }
+        /* .ys-text{width:100%; height:27px; border:none;padding:0;} */
+        .boundaryPointOutcomeTableAdd .cor-red{color:red;}
+        .boundaryPointOutcomeTableAdd .text-center{text-align:center;}
+        .boundaryPointOutcomeTableAdd .layui-input{margin-left: 10px;}
+    </style>
+</head>
+<body>
+<form class="layui-form boundaryPointOutcomeTableAdd" action="">
+    <table class="ys-tab" cellpadding="0" cellspacing="0">
+        <tr>
+            <td class="background">界址点号<span class="cor-red">*</span></td>
+            <td><input type="text"  class="layui-input"id="jzdh" maxlength="100" lay-verify="required"></td>
+        </tr>
+        <tr>
+            <td class="background">纵坐标<span class="cor-red">*</span></td>
+            <td><input type="text"  class="layui-input"id="zby" lay-verify="required|number"></td>
+        </tr>
+        <tr>
+            <td class="background">横坐标<span class="cor-red">*</span></td>
+            <td><input type="text"  class="layui-input"id="zbx" lay-verify="required|number"></td>
+        </tr>
+        <tr>
+            <td class="background">反算边长(米)<span class="cor-red">*</span></td>
+            <td><input type="text"  class="layui-input"id="fsbc" lay-verify="required|number"></td>
+        </tr>
+        <tr>
+            <td class="background">地块圈号<span class="cor-red">*</span></td>
+            <td><input type="text"  class="layui-input"id="dkqh" lay-verify="required|number"></td>
+        </tr>
+        <tr>
+            <td class="background">备注</td>
+            <td><input type="text"  class="layui-input"id="bz" maxlength="200"></td>
+        </tr>
+    </table>
+    <div class="text-center">
+        <input type="text" style="display: none" id="dkzbid">
+        <input type="text" style="display: none" id="dkxxid">
+        <button class="layui-btn layui-btn-sm layui-btn-normal" id="jzdxxsave" style="margin-top:5px;width: 90px;" lay-filter="jzdxxsave"  lay-submit>
+            保 存
+        </button>
+    </div>
+</form>
+</body>
+</html>

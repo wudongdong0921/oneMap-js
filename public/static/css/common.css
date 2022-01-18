@@ -1,0 +1,177 @@
+/* 全局滚动条样式 */ /*应测试要求按钮点击的hover暂时全部注释*/
+::-webkit-input-placeholder{color:#ccc}
+::-webkit-scrollbar-track-piece{-webkit-border-radius:0;background-color:#fff}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-thumb{height:50px;outline:2px solid #fff;outline-offset:-2px;border:2px solid #fff;-webkit-border-radius:6px;background-color:#b8b8b8;opacity:.5;-moz-opacity:.5;-khtml-opacity:.5}
+::-webkit-scrollbar-thumb:hover{height:50px;-webkit-border-radius:6px;background-color:#878987}
+
+/* 全局自定义按钮样式 */
+.layui-btn-ys{border:1px solid #e6e6e6;background:#eff1f2;color:#666;line-height:36px;-webkit-transition:.2s ease;-moz-transition:.2s ease;-o-transition:.2s ease;transition:.2s ease;-ms-transition:.2s ease}
+/* .layui-btn-ys:hover{background:#f7f7f7;color:#666} */
+.layui-btn-sm.layui-btn-ys { line-height:29px ;margin-right:10px;margin-bottom: 7px;}
+.layui-btn-sm.layui-btn-ys .buttonIcon{
+    transform: scale(0.7);
+    margin:4px 5px 0 0;
+}
+.layui-btn-blue{background-color:#1958A6;color: #fff}
+
+.linkage_layout { position: fixed; width: 1px; height:1px; background: #fff; box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.05); border: 1px solid #dedede;}
+.linkage_layout .linkageItem_layout:first-child { border: none;}
+.linkage_layout .linkageItem_layout { width: 200px; height: 200px; float: left;  padding: 5px; overflow-x: hidden; overflow-y: scroll; border-left: 1px solid #dedede;}
+.linkage_layout .linkageItem_layout .form_radio_Item .form_radio_name { line-height: 25px; position: absolute; color: #666; left: 40px; right: 15px;white-space: nowrap; text-overflow: ellipsis;overflow: hidden; }
+.linkage_layout .linkageItem_layout .form_radio_Item .form_radio_choose { line-height: 25px; height: 25px;}
+.linkage_layout .linkageItem_layout .form_radio_Item { padding: 5px 0 5px 10px; position: relative; height: 25px; display: block;}
+.linkage_layout .linkageItem_layout .fa-angle-right { line-height: 25px; position: absolute; top: 0; right: 5px; height: 25px; top: 5px;}
+.linkage_layout .linkageItem_layout .fa-angle-right::before{ line-height: 25px; display: inline-block; height: 25px;}
+.linkage_layout .linkageItem_layout .form_radio_Item.select .form_radio_choose { color: #3eafe0;  }
+.linkage_layout .linkageItem_layout .form_radio_Item.select .form_radio_name { color: #3eafe0; font-weight: bold;  }
+.linkage_layout .linkageItem_layout .form_radio_Item.choose .form_radio_name { font-weight: bold; }
+.linkage_layout .linkageItem_layout .form_radio_Item.active .form_radio_name { color: #3eafe0; font-weight: bold; }
+
+
+.form_select_searchBox { position: relative;  width: 98.5%; margin: 0 auto; height: 28px; margin-bottom: 5px; border-bottom: 1px solid #ccc; }
+.form_select_searchBox i { width: 28px; height: 28px; text-align: center; line-height: 28px; }
+.form_select_searchBox .form_select_searchInputBox { position: absolute; left: 30px; height: 28px; right: 0; bottom: 0; }
+.form_select_searchBox .form_select_searchInputBox input { border: none; width: 100%; height: 28px;}
+/* .form_select_searchBox_optionBox { padding: 10px 0;} */
+.form_select_childBox_noData { line-height: 35px; text-align: center; color: #666;}
+.form_select_childBox { width: 98.5%; margin: 0 auto; }
+.form_select_childBox .layui-form-checkbox { display: block; padding: 5px 0 5px 28px; }
+.form_select_childBox .layui-form-checkbox i { top: 7px;}
+.form_select_searchBox_valueitem { background: #3eafe0; border-radius: 5px; color: #fff; display: inline-block; margin: 0 3px; height: 24px; line-height: 25px; padding: 0 7px;}
+.form_select_searchBox_valueitem i { margin: 0 0px 0 7px; cursor: pointer; }
+.form_select .form_select_optionBox.form_select_searchBox_optionBox { min-width: auto; padding: 5px 0;}
+.form_select_childBox { max-height: 170px; overflow-y: auto; overflow-x: hidden;}
+
+/* 去除按钮黑框 */
+.layui-laypage a, .layui-laypage input, .layui-laypage button, .layui-laypage select, .layui-laypage span {outline: none;} 
+/* 表头字体 */
+.FD-UI-table-box .FD-UI-header-unit { font-size: 16px !important;}
+
+.icon { width: 1em; height: 1em; vertical-align: -0.15em; fill: currentColor; overflow: hidden; }
+
+/* 全局按钮图标样式 */
+.layui-btn .buttonIcon{float:left;display:block;margin:8px 10px 0 0;width:20px;height:20px;background-image:url(../img/button_icon.png);background-repeat:no-repeat}
+.layui-btn .buttonIcon.add{background-position:0 0}
+/* .layui-btn:hover .buttonIcon.add{background-position:0 -50px} */
+.layui-btn .buttonIcon.list{background-position:-50px 0}
+/* .layui-btn:hover .buttonIcon.list{background-position:-50px -50px} */
+.layui-btn .buttonIcon.squareAdd{background-position:-100px 0}
+/* .layui-btn:hover .buttonIcon.squareAdd{background-position:-100px -50px} */
+.layui-btn .buttonIcon.block{background-position:-150px 0}
+/* .layui-btn:hover .buttonIcon.block{background-position:-150px -50px} */
+.layui-btn .buttonIcon.link{background-position:-200px 0}
+/* .layui-btn:hover .buttonIcon.link{background-position:-200px -50px} */
+.layui-btn .buttonIcon.check{background-position:-250px 0}
+/* .layui-btn:hover .buttonIcon.check{background-position:-250px -50px} */
+.layui-btn .buttonIcon.interactive{background-position:-300px 0}
+/* .layui-btn:hover .buttonIcon.interactive{background-position:-300px -50px} */
+.layui-btn .buttonIcon.interactiveIcon{background-position:-350px 0}
+/* .layui-btn:hover .buttonIcon.interactiveIcon{background-position:-350px -50px} */
+.layui-btn .buttonIcon.squarePoint{background-position:-400px 0}
+/* .layui-btn:hover .buttonIcon.squarePoint{background-position:-400px -50px} */
+.layui-btn .buttonIcon.circularPoint{background-position:-450px 0}
+/* .layui-btn:hover .buttonIcon.circularPoint{background-position:-450px -50px} */
+.layui-btn .buttonIcon.notebook{background-position:-500px 0}
+/* .layui-btn:hover .buttonIcon.notebook{background-position:-500px -50px} */
+.layui-btn .buttonIcon.clock{background-position:-550px 0}
+/* .layui-btn:hover .buttonIcon.clock{background-position:-550px -50px} */
+.layui-btn .buttonIcon.select{background-position:-600px 0}
+/* .layui-btn:hover .buttonIcon.select{background-position:-600px -50px} */
+.layui-btn .buttonIcon.exchange{background-position:-650px 0}
+/* .layui-btn:hover .buttonIcon.exchange{background-position:-650px -50px} */
+.layui-btn .buttonIcon.exchange{background-position:-650px 0}
+/* .layui-btn:hover .buttonIcon.exchange{background-position:-650px -50px} */
+.layui-btn .buttonIcon.squareExchange{background-position:-700px 0}
+/* .layui-btn:hover .buttonIcon.squareExchange{background-position:-700px -50px} */
+.layui-btn .buttonIcon.noNotes{background-position:-750px 0}
+/* .layui-btn:hover .buttonIcon.noNotes{background-position:-750px -50px} */
+.layui-btn .buttonIcon.prohibit{background-position:-800px 0}
+/* .layui-btn:hover .buttonIcon.prohibit{background-position:-800px -50px} */
+.layui-btn .buttonIcon.prohibit{background-position:-800px 0}
+/* .layui-btn:hover .buttonIcon.prohibit{background-position:-800px -50px} */
+.layui-btn .buttonIcon.treeStructure{background-position:-850px 0}
+/* .layui-btn:hover .buttonIcon.treeStructure{background-position:-850px -50px} */
+.layui-btn .buttonIcon.stars{background-position:-900px 0}
+/* .layui-btn:hover .buttonIcon.stars{background-position:-900px -50px} */
+.layui-btn .buttonIcon.fillIn{background-position:-950px 0}
+/* .layui-btn:hover .buttonIcon.fillIn{background-position:-950px -50px} */
+.layui-btn .buttonIcon.deal{background-position:-1100px 0}
+/* .layui-btn:hover .buttonIcon.deal{background-position:-1100px -50px} */
+.layui-btn .buttonIcon.cooperation{background-position:-1150px 0}
+/* .layui-btn:hover .buttonIcon.cooperation{background-position:-1150px -50px} */
+.layui-btn .buttonIcon.listBook{background-position:-1200px 0}
+/* .layui-btn:hover .buttonIcon.listBook{background-position:-1200px -50px} */
+.layui-btn .buttonIcon.close{background-position:-1250px 0}
+/* .layui-btn:hover .buttonIcon.close{background-position:-1250px -50px} */
+.layui-btn .buttonIcon.setUp{background-position:-1300px 0}
+/* .layui-btn:hover .buttonIcon.setUp{background-position:-1300px -50px} */
+.layui-btn .buttonIcon.delete{background-position:-1400px 0}
+/* .layui-btn:hover .buttonIcon.delete{background-position:-1400px -50px} */
+.layui-btn .buttonIcon.bigLink{background-position:-1500px 0}
+/* .layui-btn:hover .buttonIcon.bigLink{background-position:-1500px -50px} */
+.layui-btn .buttonIcon.greenClock{background-position:-1550px 0}
+/* .layui-btn:hover .buttonIcon.greenClock{background-position:-1550px -50px} */
+.layui-btn .buttonIcon.greenClock{background-position:-1550px 0}
+/* .layui-btn:hover .buttonIcon.greenClock{background-position:-1550px -50px} */
+.layui-btn .buttonIcon.purpleLeaves{background-position:-1600px 0}
+/* .layui-btn:hover .buttonIcon.purpleLeaves{background-position:-1600px -50px} */
+.layui-btn .buttonIcon.firstIcon{background-position:-1650px 0}
+/* .layui-btn:hover .buttonIcon.firstIcon{background-position:-1650px -50px} */
+.layui-btn .buttonIcon.partner{background-position:-1700px 0}
+/* .layui-btn:hover .buttonIcon.partner{background-position:-1700px -50px} */
+.layui-btn .buttonIcon.seal{background-position:-1750px 0}
+/* .layui-btn:hover .buttonIcon.seal{background-position:-1750px -50px} */
+.layui-btn .buttonIcon.sealBook{background-position:-1800px 0}
+/* .layui-btn:hover .buttonIcon.sealBook{background-position:-1800px -50px} */
+.layui-btn .buttonIcon.editIcon{background-position:-1850px 0}
+/* .layui-btn:hover .buttonIcon.editIcon{background-position:-1850px -50px} */
+.layui-btn .buttonIcon.redDeal{background-position:-1900px 0}
+/* .layui-btn:hover .buttonIcon.redDeal{background-position:-1900px -50px} */
+.layui-btn .buttonIcon.voice{background-position:-1950px 0}
+/* .layui-btn:hover .buttonIcon.voice{background-position:-1950px -50px} */
+.layui-btn .buttonIcon.hammer{background-position:-2000px 0}
+/* .layui-btn:hover .buttonIcon.hammer{background-position:-2000px -50px} */
+.layui-btn .buttonIcon.volume{background-position:-2050px 0}
+/* .layui-btn:hover .buttonIcon.volume{background-position:-2050px -50px} */
+.layui-btn .buttonIcon.left{background-position:-2100px 0}
+/* .layui-btn:hover .buttonIcon.left{background-position:-2100px -50px} */
+.layui-btn .buttonIcon.square{background-position:-2150px 0}
+/* .layui-btn:hover .buttonIcon.square{background-position:-2150px -50px} */
+.layui-btn .buttonIcon.down{background-position:-2200px 0}
+/* .layui-btn:hover .buttonIcon.down{background-position:-2200px -50px} */
+.layui-btn .buttonIcon.right{background-position:-2250px 0}
+/* .layui-btn:hover .buttonIcon.right{background-position:-2250px -50px} */
+.layui-btn .buttonIcon.refresh{background-position:-2300px 0}
+/* .layui-btn:hover .buttonIcon.refresh{background-position:-2300px -50px} */
+.layui-btn .buttonIcon.forward{background-position:-2350px 0}
+/* .layui-btn:hover .buttonIcon.forward{background-position:-2350px -50px} */
+.layui-btn .buttonIcon.dev{background-position:-2400px 0}
+/* .layui-btn:hover .buttonIcon.dev{background-position:-2400px -50px} */
+.layui-btn .buttonIcon.mailList{background-position:-2450px 0}
+/* .layui-btn:hover .buttonIcon.mailList{background-position:-2450px -50px} */
+.layui-btn .buttonIcon.headPortrait{background-position:-2500px 0}
+/* .layui-btn:hover .buttonIcon.headPortrait{background-position:-2500px -50px} */
+.layui-btn .buttonIcon.timeLoop{background-position:-2550px 0}
+/* .layui-btn:hover .buttonIcon.timeLoop{background-position:-2550px -50px} */
+.layui-btn .buttonIcon.searchFat{background-position:-2600px 0}
+/* .layui-btn:hover .buttonIcon.searchFat{background-position:-2600px -50px} */
+.layui-btn .buttonIcon.software{background-position:-2650px 0}
+/* .layui-btn:hover .buttonIcon.software{background-position:-2650px -50px} */
+.layui-btn .buttonIcon.concentricCircle{background-position:-2700px 0}
+/* .layui-btn:hover .buttonIcon.concentricCircle{background-position:-2700px -50px} */
+.layui-btn .buttonIcon.searchThin{background-position:-2700px 0}
+/* .layui-btn:hover .buttonIcon.searchThin{background-position:-2700px -50px} */
+.layui-btn .buttonIcon.car{background-position:-2750px 0}
+/* .layui-btn:hover .buttonIcon.car{background-position:-2750px -50px} */
+.layui-btn .buttonIcon.officialSeal{background-position:-2750px 0}
+/* .layui-btn:hover .buttonIcon.officialSeal{background-position:-2750px -50px} */
+.layui-btn .buttonIcon.schedule{background-position:-2800px 0}
+/* .layui-btn:hover .buttonIcon.schedule{background-position:-2800px -50px} */
+.layui-btn .buttonIcon.status{background-position:-2850px 0}
+/* .layui-btn:hover .buttonIcon.status{background-position:-2850px -50px} */
+.layui-btn+.layui-btn{margin-left:0px;margin-right: 10px;}
+
+.layui-laydate-content td.laydate-selected{
+    background-color: #a0c5f1 !important;
+}

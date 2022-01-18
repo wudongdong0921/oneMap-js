@@ -1,0 +1,216 @@
+<!----------------------------------------
+* 约束突破预警
+* 戴飞
+* 2020-11-23 13:10:30
+------------------------------------------->
+
+<style type="text/css">
+  .layout-template-view {
+    padding: 0;
+  }
+
+  #card {
+    width: 100%;
+    background-color: #f2f2f2;
+    padding: 0 10px;
+    height: 100%;
+    display: flex;
+    box-sizing: border-box;
+  }
+
+  #card .card-height {
+    height: 400px;
+    padding: 16.5px;
+  }
+
+  #card .card-calendar {
+    height: 343px;
+  }
+
+  #card .card-title {
+    padding: 0 10px;
+    height: 100%;
+  }
+
+  #card .layui-col-md {
+    clear: both;
+  }
+
+  /* #card .card-active{
+     background: #e5f2f7;
+     border: 1px solid #e5f2f7 !important;
+  } */
+  #card .layui-card {
+    border: 1px solid#f2f2f2;
+  }
+
+  #card .card-height {
+    padding: 15px 15px 0px 15px;
+    height: 360px;
+  }
+
+  #card .bearer-left {
+    min-width: 320px;
+    max-width: 320px;
+    height: 100%;
+    overflow: auto;
+    background: #fff;
+    padding: 0 5px;
+  }
+
+  .card {
+    margin-top: 10px;
+    box-shadow: none;
+    border: 1px solid #eee;
+    border-radius: 2px;
+    margin-right: 0 !important;
+  }
+
+  #card .bearer-center {
+    flex: 1.5;
+    height: 100%;
+    background: #fff;
+    margin: 0 10px 0 10px;
+    position: relative;
+  }
+
+  #card .bearer-right {
+    flex: 1;
+    height: 100%;
+    background: #fff;
+    position: relative;
+  }
+  /* 2021-05-06 陈薪名 修改bug 树结构顶层显示超过详情弹出层，修改 z-index: 9999 为 z-index: 999 */
+  #card .bearer-center .area {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    z-index: 999; 
+  }
+
+  #card .bearer-center .area .area-tree {
+    position: relative;
+    z-index: 99;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  #card .bearer-center .map {
+    width: 100%;
+    height: 100%;
+  }
+
+  #card .layui-card-header .card-title {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #card .bearer-right .polyline {
+    height: 90%;
+    padding-top: 20px;
+  }
+
+  #card .bearer-left .layui-collapse .layui-colla-item {
+    overflow: auto;
+  }
+
+  .labels {
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    right: 20px;
+    bottom: 100px;
+  }
+
+  .flex_wrap {
+    display: flex;
+  }
+
+  .label_color {
+    width: 20px;
+    height: 15px;
+    border-radius: 4px;
+    margin-right: 20px;
+    margin-top: 3px;
+  }
+
+  .color_under_60 {
+    background: #ff8848;
+  }
+
+  .color_60_80 {
+    background: #fcfcd4;
+  }
+
+  .label_grade_scope {
+    line-height: 20px;
+    color: #027DB4;
+    font-size: 15px;
+  }
+
+  .mapboxgl-popup-tip{
+    display: none;
+  }
+  .mapboxgl-popup-content{
+    padding: 0;
+    background: rgba(0, 0, 0, 0);
+    box-shadow : none;
+  }
+  .mapPopup_mapMessage {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    color: #fff;
+    border-radius: 4px;
+    padding-bottom: 5px;
+  }
+
+  .mapPopup_mapMessage_item {
+    margin: 5px 0;
+    margin-bottom: 0;
+  }
+
+  .mapPopup_mapMessage_image {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    vertical-align: middle;
+    margin: 0 10px 0 0;
+    border-radius: 5px;
+  }
+
+  .mapPopup_mapMessage_title {
+    font-size: 14px;
+  }
+  /* 无数据显示样式 */
+  .bearer-left-class {
+    text-align: center;
+    line-height: 800px
+  }
+</style>
+<div id="card">
+  <div class="bearer-left">
+    
+  </div>
+  <div class="bearer-center">
+    <div class="area">
+      <img src="../../../../../../public/static/icon//area.svg" width="20px" alt="">
+      <div class="area-tree"></div>
+    </div>
+    <div class="map"></div>
+    <div class="labels">
+      <div class="flex_wrap">
+        <div class="label_color color_under_60"></div>
+        <div class="label_grade_scope">超标</div>
+      </div>
+      <div class="flex_wrap">
+        <div class="label_color color_60_80"></div>
+        <div class="label_grade_scope">预警</div>
+      </div>
+    </div>
+  </div>
+  <div class="bearer-right">
+    <div class="polyline"></div>
+  </div>
+</div>

@@ -1,0 +1,193 @@
+<!----------------------------------------
+* 监测评估预警
+* 戴飞
+* 2020-11-23 13:10:30
+------------------------------------------->
+<style>
+  .layout-template-view {
+    padding: 0;
+  }
+
+  #card {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #f2f2f2;
+    padding: 0 10px;
+    height: 100%;
+  }
+
+  #card .war-top {
+    width: 100%;
+    height: 60px;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+  }
+
+  #card .war-top .area {
+    padding: 15px;
+  }
+
+  #card .war-top .area .area-list {
+    display: inline-block;
+    margin-left: 5px;
+    cursor: pointer
+  }
+
+  #card .war-top .search {
+    line-height: 60px;
+    padding-right: 50px;
+  }
+
+  #card .war-top .search .layui-input {
+    width: 200px;
+    display: inline;
+    margin-right: 20px;
+  }
+
+  #card .war-center {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+  }
+
+  #card .war-center .war-center-left {
+    width: 60%;
+  }
+
+  #card .war-center .war-center-left .layui-card-header {
+    border-bottom: none;
+  }
+
+  #card .war-center .war-center-left .layui-card-body {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  #card .war-center .war-center-left .layui-card-body .piece {
+    width: 100px;
+    height: 85px;
+    box-shadow: 1px 1px 5px 1px rgba(25, 25, 25, .3);
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 25px;
+  }
+
+  #card .war-center .war-center-right {
+    width: 39.5%;
+  }
+
+  #card .war-center .war-center-right .layui-card-header {
+    border-bottom: none;
+  }
+
+  #card .war-center .war-center-left .layui-card {
+    height: 190px;
+  }
+
+  #card .war-center .war-center-right .layui-card {
+    height: 190px;
+  }
+
+  #card .war-center .war-center-right .layui-card .layui-card-body {
+    height: 110px;
+    overflow: auto;
+  }
+
+  #card .war-center .war-center-right .body-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    height: 40px;
+    line-height: 40px;
+  }
+
+  #card .war-center .war-center-right .body-row:hover {
+    background-color: #eeeeee;
+  }
+
+  #card .war-center .war-center-right .body-row:active {
+    background-color: #cccccc;
+  }
+
+  #card .war-center .war-center-right .active {
+    background-color: #cccccc;
+  }
+
+
+  #card .war-center .war-center-right .body-row .look-index {
+    cursor: pointer;
+  }
+
+  #card .war-bottom {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-height: 680px;
+  }
+
+  #card .war-bottom .layui-card {
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, .3);
+    width: 305px;
+    max-height: 260px;
+    margin-right: 28px;
+  }
+
+  #card .war-bottom .layui-card .layui-card-bottom {
+    box-sizing: border-box;
+    width: 100%;
+    border-top: 1px solid #f2f2f2;
+    padding: 10px 15px;
+  }
+
+  #card .layui-card-header .card-title {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #card .war-bottom .layui-card:nth-child(5n) {
+    margin-right: 0;
+  }
+
+  #card .war-bottom .layui-card .card-title {
+    padding: 0 10px;
+    height: 100%;
+  }
+
+  #card .war-bottom .layui-card .layui-card-body .bot-row-left {
+    margin-left: 20px;
+  }
+
+  #card .war-bottom .layui-card .layui-card-body .bot-row-right {
+    color: #2b5394;
+    text-align: right;
+  }
+
+  #card .war-bottom .layui-card .layui-card-body .bot-row-right span {
+    font-weight: 700;
+    font-size: 18px;
+    margin-right: 5px;
+  }
+
+  /* #titleName {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  } */
+</style>
+<div id="card">
+  <div class="war-center">
+    <div class="war-center-left"></div>
+    <div class="war-center-right"></div>
+  </div>
+  <div class="war-bottom"></div>
+
+  <div id="play_line"></div>
+</div>
